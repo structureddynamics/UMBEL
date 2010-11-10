@@ -1,0 +1,233 @@
+# How to bind a class with a subject concept?
+#
+# 1) we use Cytoscape to do the analysis of the network.
+# 2) when we create equivalence between two SC and two Classes, and that these two Classes have a relationship one between the other, then we have to make sure
+#     that this relationshiop is equivalent in UMBEL. For this, we select the two nodes in the network, within cytoscape, using the tool "Select->Nodes->By Name...", then we
+#     search for the shortest path between the two nodes in a DIRECTED graph. The plugin used is "Plugin->Shortest path..->Shortest path (directed). If not path are found, then
+#     we choose two switch the two nodes, and reperform the analysis. If there are still no path, then we can't make the linkage since the relationship doens't hold in both worlds.
+#     Check the foaf:Person/foaf:Agent example.
+# 3) Also we use the Cyc foundation concepts browser to help reading the meaning of subject concepts. It is available at: http://www.cycfoundation.org/concepts/
+
+
+######## FOAF ########
+
+
+<http://xmlns.com/foaf/0.1/Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/ConceptualWork> .
+<http://umbel.org/umbel/sc/ConceptualWork> <http://umbel.org/umbel#superClassOf> <http://xmlns.com/foaf/0.1/Document> .
+<http://xmlns.com/foaf/0.1/Image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/VisualWork> .
+<http://umbel.org/umbel/sc/VisualWork> <http://umbel.org/umbel#superClassOf> <http://xmlns.com/foaf/0.1/Image> .
+<http://umbel.org/umbel/sc/InternetService> <http://umbel.org/umbel#superClassOf> <http://xmlns.com/foaf/0.1/OnlineChatAccount> .
+<http://xmlns.com/foaf/0.1/OnlineChatAccount> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/InternetService> .
+<http://umbel.org/umbel/sc/InternetService> <http://umbel.org/umbel#superClassOf> <http://xmlns.com/foaf/0.1/OnlineEcommerceAccount> .
+<http://xmlns.com/foaf/0.1/OnlineEcommerceAccount> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/InternetService> .
+<http://umbel.org/umbel/sc/InternetService> <http://umbel.org/umbel#superClassOf> <http://xmlns.com/foaf/0.1/OnlineGamingAccount> .
+<http://xmlns.com/foaf/0.1/OnlineGamingAccount> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/InternetService> .
+
+<http://umbel.org/umbel/sc/Person> <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/Person> .
+<http://umbel.org/umbel/sc/Agent_Generic> <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/Agent> .
+<http://umbel.org/umbel/sc/MultiIndividualAgent> <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/Group> .
+<http://umbel.org/umbel/sc/Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/Organization> .
+<http://umbel.org/umbel/sc/InternetService> <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/OnlineAccount> .
+<http://umbel.org/umbel/sc/Project> <http://www.w3.org/2002/07/owl#equivalentClass> <http://xmlns.com/foaf/0.1/Project> .
+
+
+######## FOAF YANDEX ########
+
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://blogs.yandex.ru/schema/foaf/Posts> .
+<http://blogs.yandex.ru/schema/foaf/Posts> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+
+
+######## RSS 1.0 ########
+
+<http://purl.org/rss/1.0/image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/VisualWork> .
+<http://umbel.org/umbel/sc/VisualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/rss/1.0/image> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/rss/1.0/item> .
+<http://purl.org/rss/1.0/item> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+
+<http://umbel.org/umbel/sc/List_Information> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/rss/1.0/channel> .
+
+######## SIOC ########
+
+
+<http://umbel.org/umbel/sc/ConceptualWork> <http://umbel.org/umbel#superClassOf> <http://rdfs.org/sioc/ns#Item> .
+<http://rdfs.org/sioc/ns#Item> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/ConceptualWork> .
+<http://umbel.org/umbel/sc/InternetService> <http://umbel.org/umbel#superClassOf> <http://rdfs.org/sioc/ns#User> .
+<http://rdfs.org/sioc/ns#User> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/InternetService> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://rdfs.org/sioc/ns#Post> .
+<http://rdfs.org/sioc/ns#Post> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/Role> <http://umbel.org/umbel#superClassOf> <http://rdfs.org/sioc/ns#Role> .
+<http://rdfs.org/sioc/ns#Role> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Role> .
+<http://umbel.org/umbel/sc/InformationStore> <http://umbel.org/umbel#superClassOf> <http://rdfs.org/sioc/ns#Space> .
+<http://rdfs.org/sioc/ns#Space> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/InformationStore> .
+<http://umbel.org/umbel/sc/WebSite> <http://umbel.org/umbel#superClassOf> <http://rdfs.org/sioc/ns#Site> .
+<http://rdfs.org/sioc/ns#Site> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/WebSite> .
+
+<http://umbel.org/umbel/sc/MessageThread> <http://www.w3.org/2002/07/owl#equivalentClass> <http://rdfs.org/sioc/ns#Thread> .
+<http://umbel.org/umbel/sc/ComputerBulletinBoard> <http://www.w3.org/2002/07/owl#equivalentClass> <http://rdfs.org/sioc/ns#Forum> .
+<http://umbel.org/umbel/sc/UserAccountGroup> <http://www.w3.org/2002/07/owl#equivalentClass> <http://rdfs.org/sioc/ns#Usergroup> .
+
+
+######## DOAP ########
+
+
+<http://umbel.org/umbel/sc/Project> <http://umbel.org/umbel#superClassOf> <http://usefulinc.com/ns/doap#Project> .
+<http://usefulinc.com/ns/doap#Project> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Project> .
+
+######## GEO WGS84 ########
+
+<http://umbel.org/umbel/sc/SpatialThing_Localized> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+<http://umbel.org/umbel/sc/GeographicalPlace> <http://www.w3.org/2002/07/owl#equivalentClass>  <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .
+
+######## GEONAMES ########
+
+<http://umbel.org/umbel/sc/Country> <http://www.w3.org/2002/07/owl#equivalentClass> <http://www.geonames.org/ontology#Country> .
+
+<http://umbel.org/umbel/sc/SpatialThing_Localized> <http://umbel.org/umbel#superClassOf> <http://www.geonames.org/ontology#Feature> .
+<http://www.geonames.org/ontology#Feature> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/SpatialThing_Localized> .
+
+######## CC ########
+
+<http://umbel.org/umbel/sc/CopyrightLicense> <http://www.w3.org/2002/07/owl#equivalentClass> <http://creativecommons.org/ns#License> .
+
+######## EVENT ########
+
+<http://umbel.org/umbel/sc/Event> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/NET/c4dm/event.owl#Event> .
+
+######## Programmes Ontology ########
+
+<http://umbel.org/umbel/sc/Broadcasting> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/FirstBroadcast> .
+<http://purl.org/ontology/po/FirstBroadcast> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Broadcasting>.
+<http://umbel.org/umbel/sc/Broadcasting> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/RepeatBroadcast>.
+<http://purl.org/ontology/po/RepeatBroadcast> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Broadcasting>.
+<http://umbel.org/umbel/sc/BroadcastMediaProduct> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/Episode>.
+<http://purl.org/ontology/po/Episode> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/BroadcastMediaProduct>.
+<http://umbel.org/umbel/sc/CommunicationsOrganization> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/Service>.
+<http://purl.org/ontology/po/Service> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/CommunicationsOrganization>.
+<http://umbel.org/umbel/sc/RadioStation_Organization> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/RegionalRadio>.
+<http://purl.org/ontology/po/RegionalRadio> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/RadioStation_Organization>.
+<http://umbel.org/umbel/sc/RadioStation_Organization> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/LocalRadio>.
+<http://purl.org/ontology/po/LocalRadio> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/RadioStation_Organization>.
+<http://umbel.org/umbel/sc/RadioStation_Organization> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/NationalRadio>.
+<http://purl.org/ontology/po/NationalRadio> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/RadioStation_Organization>.
+<http://umbel.org/umbel/sc/TelevisionStation> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/po/TV>.
+<http://purl.org/ontology/po/TV> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/TelevisionStation>.
+
+<http://umbel.org/umbel/sc/Broadcasting> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/po/Broadcast> .
+<http://umbel.org/umbel/sc/BroadcastMediaProduct> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/po/Programme> .
+<http://umbel.org/umbel/sc/BroadcastSeriesProduct> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/po/Series> .
+<http://umbel.org/umbel/sc/RadioStation_Organization> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/po/Radio>.
+
+######## MO (MUSIC ONTOLOGY) ########
+
+<http://umbel.org/umbel/sc/MusicPerformanceAgent> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/MusicArtist>.
+<http://umbel.org/umbel/sc/MusicalPerformer> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/SoloMusicArtist>.
+<http://umbel.org/umbel/sc/Band_MusicGroup> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/MusicGroup>.
+<http://umbel.org/umbel/sc/RecordedSoundProduct> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/Record>.
+<http://umbel.org/umbel/sc/MusicTrack> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/Track>.
+<http://umbel.org/umbel/sc/Multi_MovementComposition> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/Movement>.
+<http://umbel.org/umbel/sc/AudioConceptualWork> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/MusicalWork>.
+<http://umbel.org/umbel/sc/Sound> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/Sound>.
+<http://umbel.org/umbel/sc/MusicalPerformance> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/Performance>.
+<http://umbel.org/umbel/sc/InformationRecordingProcess> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/mo/Recording>.
+
+######## FRBR ########
+
+<http://umbel.org/umbel/sc/ConceptualWork> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/vocab/frbr/core#Work>.
+
+######## BIBO ########
+
+<http://purl.org/ontology/bibo/Document> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/ConceptualWork> .
+<http://umbel.org/umbel/sc/ConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Document> .
+<http://purl.org/ontology/bibo/Book> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Book_CW> .
+<http://umbel.org/umbel/sc/Book_CW> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Book> .
+<http://purl.org/ontology/bibo/Image> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/VisualWork> .
+<http://umbel.org/umbel/sc/VisualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Image> .
+
+
+<http://umbel.org/umbel/sc/Article_PCW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Article> .
+<http://umbel.org/umbel/sc/ScholarlyArticle> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/AcademicArticle> .
+<http://umbel.org/umbel/sc/VideoConceptualWork> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/AudioVisualDocument> .
+<http://umbel.org/umbel/sc/Bill_ProposedLaw> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Bill> .
+<http://umbel.org/umbel/sc/Patent> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Patent> .
+<http://umbel.org/umbel/sc/InstructionalWork> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Manual> .
+<http://purl.org/ontology/bibo/Thesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Thesis> .
+<http://umbel.org/umbel/sc/Letter_CW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Letter> .
+<http://umbel.org/umbel/sc/WrittenReportOnSituation_CW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Report> .
+<http://umbel.org/umbel/sc/Movie_CW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Film> .
+<http://umbel.org/umbel/sc/Map> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Map> .
+<http://umbel.org/umbel/sc/Manuscript_CW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Manuscript> .
+<http://umbel.org/umbel/sc/Slideshow_CW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Slideshow> .
+<http://umbel.org/umbel/sc/Slide_CW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Slide> .
+<http://purl.org/ontology/bibo/DocumentPart> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/ConceptualWork> .
+<http://umbel.org/umbel/sc/ConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/DocumentPart> .
+<http://purl.org/ontology/bibo/BookSection> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/TextualPCW> .
+<http://umbel.org/umbel/sc/TextualPCW> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/BookSection> .
+<http://purl.org/ontology/bibo/Excerpt> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/TextualPCW> .
+<http://umbel.org/umbel/sc/TextualPCW> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Excerpt> .
+<http://purl.org/ontology/bibo/Quote> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/TextualPCW> .
+<http://umbel.org/umbel/sc/TextualPCW> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Quote> .
+<http://purl.org/ontology/bibo/AudioDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/AudioConceptualWork> .
+<http://umbel.org/umbel/sc/AudioConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/AudioDocument>.
+<http://purl.org/ontology/bibo/ThesisDegree> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/HigherEducationDegree> .
+<http://umbel.org/umbel/sc/HigherEducationDegree> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/ThesisDegree> .
+<http://purl.org/ontology/bibo/PersonalCommunication> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Event> .
+<http://umbel.org/umbel/sc/Event> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/PersonalCommunication> .
+<http://purl.org/ontology/bibo/Interview> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Event> .
+<http://umbel.org/umbel/sc/Event> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Interview>.
+<http://purl.org/ontology/bibo/Performance> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Event> .
+<http://umbel.org/umbel/sc/Event><http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Performance> .
+<http://purl.org/ontology/bibo/Series> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/ConceptualWorkSeries> .
+<http://umbel.org/umbel/sc/ConceptualWorkSeries> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Series> .
+<http://purl.org/ontology/bibo/PersonalCommunicationDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/PersonalCommunicationDocument>.
+<http://purl.org/ontology/bibo/Thesis> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Thesis> .
+<http://purl.org/ontology/bibo/Issue> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Issue> .
+<http://purl.org/ontology/bibo/Proceedings> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Book_CW> .
+<http://umbel.org/umbel/sc/Book_CW> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Proceedings> .
+<http://purl.org/ontology/bibo/Email> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Email>.
+<http://purl.org/ontology/bibo/EditedBook> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/EditedBook>.
+<http://purl.org/ontology/bibo/CollectedDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/CollectedDocument> .
+<http://purl.org/ontology/bibo/Note> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Note> .
+<http://purl.org/ontology/bibo/Statute> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Statute> .
+<http://purl.org/ontology/bibo/Legislation> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Legislation> .
+<http://purl.org/ontology/bibo/LegalDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/LegalDocument> .
+<http://purl.org/ontology/bibo/LegalCaseDocument> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/LegalCaseDocument>.
+<http://purl.org/ontology/bibo/LegalDecision> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/LegalDecision> .
+<http://purl.org/ontology/bibo/LegalCaseDecision> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/LegalCaseDecision>.
+<http://purl.org/ontology/bibo/Note> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Note>.
+<http://purl.org/ontology/bibo/CourtReporter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/CourtReporter>.
+<http://purl.org/ontology/bibo/CourtReporter> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Series> .
+<http://umbel.org/umbel/sc/Series> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/CourtReporter>.
+<http://purl.org/ontology/bibo/Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Code>.
+<http://purl.org/ontology/bibo/Code> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Series> .
+<http://umbel.org/umbel/sc/Series> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Code> .
+<http://purl.org/ontology/bibo/Brief> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/PropositionalConceptualWork> .
+<http://umbel.org/umbel/sc/PropositionalConceptualWork> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Brief> .
+
+<http://umbel.org/umbel/sc/Chapter_PCW> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Chapter> .
+<http://umbel.org/umbel/sc/Hearing_LegalProceeding> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Hearing> .
+<http://umbel.org/umbel/sc/Conference> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Conference> .
+<http://purl.org/ontology/bibo/Workshop> <http://www.w3.org/2000/01/rdf-schema#subClassOf> <http://umbel.org/umbel/sc/Event> .
+<http://umbel.org/umbel/sc/Event> <http://umbel.org/umbel#superClassOf> <http://purl.org/ontology/bibo/Workshop> .
+<http://umbel.org/umbel/sc/PeriodicalSeries> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Periodical> .
+<http://umbel.org/umbel/sc/JournalSeries> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Journal> .
+<http://umbel.org/umbel/sc/NewspaperSeries> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Newspaper> .
+<http://umbel.org/umbel/sc/MagazineSeries> <http://www.w3.org/2002/07/owl#equivalentClass> <http://purl.org/ontology/bibo/Magazine> .
+
+<http://purl.org/ontology/bibo/Workshop> <http://umbel.org/umbel/isAligned> <http://umbel.org/umbel/sc/WorkshopConference> .
