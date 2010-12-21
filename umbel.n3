@@ -239,10 +239,8 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                           :FinanceEconomy
                                           :Geopolitical
                                           :NaturalPhenomena
-                                          :NaturalSubstances
                                           :Notations
                                           :Numbers
-                                          :Organizations
                                           :Plants
                                           :Prokaryotes
                                           :ProtistsFungus
@@ -367,7 +365,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                            :FinanceEconomy
                                            :FoodDrink
                                            :Geopolitical
-                                           :NaturalPhenomena
                                            :Notations
                                            :Numbers
                                            :Organizations
@@ -414,7 +411,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                         :Organizations
                                         :PersonTypes
                                         :Prokaryotes
-                                        :ProtistsFungus
                                         :Society
                                         :StructuredInfo
                                         :Time
@@ -451,7 +447,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                              :Numbers
                                              :PersonTypes
                                              :Plants
-                                             :Products
                                              :Prokaryotes
                                              :ProtistsFungus
                                              :Society
@@ -490,7 +485,6 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                          :Organizations
                                          :PersonTypes
                                          :Plants
-                                         :Products
                                          :Prokaryotes
                                          :ProtistsFungus
                                          :Society
@@ -604,7 +598,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                  :Extraterrestrial
                                                  :FoodDrink
                                                  :NaturalPhenomena
-                                                 :Notations
                                                  :Numbers
                                                  :PersonTypes
                                                  :Plants
@@ -640,7 +633,6 @@ Facilities also include the component parts that go into making them (such as fo
                                             :Notations
                                             :Numbers
                                             :Organizations
-                                            :PersonTypes
                                             :Prokaryotes
                                             :Society
                                             :StructuredInfo
@@ -675,7 +667,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                :Facilities
                                                :FoodDrink
                                                :NaturalPhenomena
-                                               :NaturalSubstances
                                                :Notations
                                                :Numbers
                                                :PersonTypes
@@ -759,7 +750,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                     :Diseases
                                                     :Events
                                                     :Facilities
-                                                    :Geopolitical
                                                     :NaturalPhenomena
                                                     :Notations
                                                     :Numbers
@@ -798,7 +788,6 @@ Facilities also include the component parts that go into making them (such as fo
                                             :Events
                                             :Extraterrestrial
                                             :Facilities
-                                            :FinanceEconomy
                                             :FoodDrink
                                             :Geopolitical
                                             :NaturalPhenomena
@@ -808,7 +797,6 @@ Facilities also include the component parts that go into making them (such as fo
                                             :Plants
                                             :Prokaryotes
                                             :ProtistsFungus
-                                            :Society
                                             :Time
                                             :Workplaces
                                           )
@@ -873,7 +861,6 @@ Identifiers (numeric or alphanumeric identifiers for objects, often in a highly 
                
                owl:disjointWith [ rdf:type owl:Class ;
                                   owl:unionOf ( :Activities
-                                                :Animals
                                                 :AudioInfo
                                                 :Chemistry
                                                 :Diseases
@@ -924,7 +911,6 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                               :Extraterrestrial
                                               :Facilities
                                               :FinanceEconomy
-                                              :FoodDrink
                                               :Geopolitical
                                               :NaturalPhenomena
                                               :NaturalSubstances
@@ -996,8 +982,6 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
           
           owl:disjointWith [ rdf:type owl:Class ;
                              owl:unionOf ( :Diseases
-                                           :Earthscape
-                                           :Events
                                            :Extraterrestrial
                                            :Geopolitical
                                            :NaturalPhenomena
@@ -1071,7 +1055,6 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                                  :AudioInfo
                                                  :Chemistry
                                                  :Diseases
-                                                 :Drugs
                                                  :Earthscape
                                                  :Events
                                                  :Extraterrestrial
@@ -1140,7 +1123,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                           :Geopolitical
                                           :NaturalPhenomena
                                           :NaturalSubstances
-                                          :Notations
                                           :Numbers
                                           :Plants
                                           :Products

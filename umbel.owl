@@ -2,7 +2,6 @@
 
 
 <!DOCTYPE rdf:RDF [
-    <!ENTITY umbel "http://umbel.org/umbel#" >
     <!ENTITY vann "http://purl.org/vocab/vann/" >
     <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
     <!ENTITY dc "http://purl.org/dc/elements/1.1/" >
@@ -17,7 +16,6 @@
      xml:base="http://umbel.org/umbel"
      xmlns:dc="http://purl.org/dc/elements/1.1/"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:umbel="http://umbel.org/umbel#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -45,26 +43,26 @@
 
     <owl:AnnotationProperty rdf:about="&dc;creator"/>
     <owl:AnnotationProperty rdf:about="&dc;contributor"/>
-    <owl:AnnotationProperty rdf:about="&umbel;definition">
+    <owl:AnnotationProperty rdf:about="http://umbel.org/umbel#definition">
         <prefLabel xml:lang="en">definition</prefLabel>
     </owl:AnnotationProperty>
     <owl:AnnotationProperty rdf:about="&vann;preferredNamespaceUri"/>
     <owl:AnnotationProperty rdf:about="&vann;preferredNamespacePrefix"/>
-    <owl:AnnotationProperty rdf:about="&umbel;altLabel">
+    <owl:AnnotationProperty rdf:about="http://umbel.org/umbel#altLabel">
         <prefLabel xml:lang="en">alternative label</prefLabel>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="&umbel;hasCharacteristic">
+    <owl:AnnotationProperty rdf:about="http://umbel.org/umbel#hasCharacteristic">
         <definition xml:lang="en">The property umbel:hasCharacteristic is used to assert the relation between a Reference Concept and external properties that may be used in external ontologies to characterize, describe, or provide attributes for data records associated with that concept. It is via this property or its inverse, umbel:isCharacteristicOf, that external data characterizations may be incorporated and modeled within a domain ontology based on the UMBEL vocabulary.</definition>
         <prefLabel xml:lang="en">has characteristic</prefLabel>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="&umbel;prefLabel">
+    <owl:AnnotationProperty rdf:about="http://umbel.org/umbel#prefLabel">
         <prefLabel xml:lang="en">preferred label</prefLabel>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="&umbel;isCharacteristicOf">
+    <owl:AnnotationProperty rdf:about="http://umbel.org/umbel#isCharacteristicOf">
         <definition xml:lang="en">The property umbel:isCharacteristicOf is used to assert the relation between a property and a Reference Concept (or its punned individual) to which it applies. Such properties may be used in external ontologies to characterize, describe, or provide attributes for data records associated with that concept. It is via this property or its inverse, umbel:hasCharacteristic, that external data characterizations may be incorporated and modeled within a domain ontology based on the UMBEL vocabulary.</definition>
         <prefLabel xml:lang="en">is characteristic of</prefLabel>
     </owl:AnnotationProperty>
-    <owl:AnnotationProperty rdf:about="&umbel;hiddenLabel">
+    <owl:AnnotationProperty rdf:about="http://umbel.org/umbel#hiddenLabel">
         <prefLabel xml:lang="en">hidden label</prefLabel>
     </owl:AnnotationProperty>
     
@@ -83,13 +81,13 @@
 
     <!-- http://umbel.org/umbel#isAbout -->
 
-    <owl:ObjectProperty rdf:about="&umbel;isAbout">
+    <owl:ObjectProperty rdf:about="http://umbel.org/umbel#isAbout">
         <definition xml:lang="en">The property umbel:isAbout is used to assert the relation between a named entity (individual) and a Reference Concept class. umbel:isAbout relates the named entity (individual) to the class through the basis of its subject matter. The relation acknowledges that the scope of the class can not be determined solely by the aggregation or extent of its associated individual entity members, and that the nature of the Reference Concept class may not alone bound or define the individual entity.
 
 This property is therefore used to create a topical assertion between an individual and a Reference Concept.</definition>
         <prefLabel xml:lang="en">is about</prefLabel>
-        <rdfs:range rdf:resource="&umbel;RefConcept"/>
-        <owl:inverseOf rdf:resource="&umbel;isRelatedTo"/>
+        <rdfs:range rdf:resource="http://umbel.org/umbel#RefConcept"/>
+        <owl:inverseOf rdf:resource="http://umbel.org/umbel#isRelatedTo"/>
         <rdfs:domain rdf:resource="&owl;Thing"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
@@ -98,7 +96,7 @@ This property is therefore used to create a topical assertion between an individ
 
     <!-- http://umbel.org/umbel#isLike -->
 
-    <owl:ObjectProperty rdf:about="&umbel;isLike">
+    <owl:ObjectProperty rdf:about="http://umbel.org/umbel#isLike">
         <rdf:type rdf:resource="&owl;SymmetricProperty"/>
         <definition xml:lang="en">The property umbel:isLike is used to assert an associative link between similar individuals who may or may not be identical, but are believed to be so. This property is not intended as a general expression of similarity, but rather the likely but uncertain same identity of the two resources being related.
 
@@ -119,10 +117,10 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#isRelatedTo -->
 
-    <owl:ObjectProperty rdf:about="&umbel;isRelatedTo">
+    <owl:ObjectProperty rdf:about="http://umbel.org/umbel#isRelatedTo">
         <definition xml:lang="en">Check the definition of umbel:isAbout for the definition of this property; isRelatedTo is the inverse property of isAbout. </definition>
         <prefLabel xml:lang="en">links entity</prefLabel>
-        <rdfs:domain rdf:resource="&umbel;RefConcept"/>
+        <rdfs:domain rdf:resource="http://umbel.org/umbel#RefConcept"/>
         <rdfs:range rdf:resource="&owl;Thing"/>
         <rdfs:subPropertyOf rdf:resource="&owl;topObjectProperty"/>
     </owl:ObjectProperty>
@@ -148,7 +146,7 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#hasMapping -->
 
-    <owl:DatatypeProperty rdf:about="&umbel;hasMapping">
+    <owl:DatatypeProperty rdf:about="http://umbel.org/umbel#hasMapping">
         <definition xml:lang="en">This property is used to reify a umbel:isAbout or a umbel:isRelatedTo property to a mapping percentage value, some quantitative metric value, or a qualitative descriptor characterizing the linkage degree or overlap between the two classes, predicates, individuals or datatypes. This value might be calculated from some external utility. </definition>
         <prefLabel xml:lang="en">has mapping</prefLabel>
         <rdfs:domain rdf:resource="&rdf;Statement"/>
@@ -177,8 +175,8 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#AbstractLevel -->
 
-    <owl:Class rdf:about="&umbel;AbstractLevel">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#AbstractLevel">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <definition xml:lang="en">This general SuperType category is largely composed of former AbstractConcepts, and represent some of the more abstract upper-level nodes for connecting the UMBEL structure together. This SuperType also includes theories or processes or methods for humans to do stuff or any human technology </definition>
         <prefLabel xml:lang="en">abstract level</prefLabel>
     </owl:Class>
@@ -187,33 +185,33 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#Activities -->
 
-    <owl:Class rdf:about="&umbel;Activities">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Activities">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -225,33 +223,31 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#Animals -->
 
-    <owl:Class rdf:about="&umbel;Animals">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Animals">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -263,8 +259,8 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#Attributes -->
 
-    <owl:Class rdf:about="&umbel;Attributes">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Attributes">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <definition xml:lang="en">This general SuperType category is for descriptive attributes of all kinds. Think of the specific attributes in Wikipedia &quot;infoboxes&quot; to understand the purpose and coverage of this SuperType. It includes colors, shapes, sizes, or other descriptive characteristics about an object.</definition>
         <prefLabel xml:lang="en">attributes</prefLabel>
     </owl:Class>
@@ -273,35 +269,35 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#AudioInfo -->
 
-    <owl:Class rdf:about="&umbel;AudioInfo">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#AudioInfo">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -313,33 +309,33 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#Chemistry -->
 
-    <owl:Class rdf:about="&umbel;Chemistry">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Chemistry">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -351,36 +347,35 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#Diseases -->
 
-    <owl:Class rdf:about="&umbel;Diseases">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Diseases">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -392,34 +387,33 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#Drugs -->
 
-    <owl:Class rdf:about="&umbel;Drugs">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Drugs">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -431,33 +425,32 @@ It is appropriate to use this property when there is strong belief the two resou
 
     <!-- http://umbel.org/umbel#Earthscape -->
 
-    <owl:Class rdf:about="&umbel;Earthscape">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Earthscape">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -473,29 +466,28 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). </defin
 
     <!-- http://umbel.org/umbel#Events -->
 
-    <owl:Class rdf:about="&umbel;Events">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Events">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -507,35 +499,35 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). </defin
 
     <!-- http://umbel.org/umbel#Extraterrestrial -->
 
-    <owl:Class rdf:about="&umbel;Extraterrestrial">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Extraterrestrial">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -547,34 +539,34 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). </defin
 
     <!-- http://umbel.org/umbel#Facilities -->
 
-    <owl:Class rdf:about="&umbel;Facilities">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Facilities">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -590,28 +582,27 @@ Facilities also include the component parts that go into making them (such as fo
 
     <!-- http://umbel.org/umbel#FinanceEconomy -->
 
-    <owl:Class rdf:about="&umbel;FinanceEconomy">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#FinanceEconomy">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -623,30 +614,29 @@ Facilities also include the component parts that go into making them (such as fo
 
     <!-- http://umbel.org/umbel#FoodDrink -->
 
-    <owl:Class rdf:about="&umbel;FoodDrink">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#FoodDrink">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -658,35 +648,34 @@ Facilities also include the component parts that go into making them (such as fo
 
     <!-- http://umbel.org/umbel#Geopolitical -->
 
-    <owl:Class rdf:about="&umbel;Geopolitical">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Geopolitical">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -698,8 +687,8 @@ Facilities also include the component parts that go into making them (such as fo
 
     <!-- http://umbel.org/umbel#MarketsIndustries -->
 
-    <owl:Class rdf:about="&umbel;MarketsIndustries">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#MarketsIndustries">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <definition xml:lang="en">This SuperType is a specialized classificatory system for markets and industries. It could be combined with the SuperType above, but is kept separate in order to provide a separate, economy-oriented system. </definition>
         <prefLabel xml:lang="en">market industries</prefLabel>
     </owl:Class>
@@ -708,33 +697,33 @@ Facilities also include the component parts that go into making them (such as fo
 
     <!-- http://umbel.org/umbel#NaturalPhenomena -->
 
-    <owl:Class rdf:about="&umbel;NaturalPhenomena">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#NaturalPhenomena">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -746,31 +735,30 @@ Facilities also include the component parts that go into making them (such as fo
 
     <!-- http://umbel.org/umbel#NaturalSubstances -->
 
-    <owl:Class rdf:about="&umbel;NaturalSubstances">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#NaturalSubstances">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -782,32 +770,30 @@ Facilities also include the component parts that go into making them (such as fo
 
     <!-- http://umbel.org/umbel#Notations -->
 
-    <owl:Class rdf:about="&umbel;Notations">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Notations">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -821,38 +807,38 @@ Identifiers (numeric or alphanumeric identifiers for objects, often in a highly 
 
     <!-- http://umbel.org/umbel#Numbers -->
 
-    <owl:Class rdf:about="&umbel;Numbers">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Numbers">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -864,33 +850,32 @@ Identifiers (numeric or alphanumeric identifiers for objects, often in a highly 
 
     <!-- http://umbel.org/umbel#Organizations -->
 
-    <owl:Class rdf:about="&umbel;Organizations">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Organizations">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -906,36 +891,35 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
 
     <!-- http://umbel.org/umbel#PersonTypes -->
 
-    <owl:Class rdf:about="&umbel;PersonTypes">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#PersonTypes">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -947,36 +931,36 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
 
     <!-- http://umbel.org/umbel#Plants -->
 
-    <owl:Class rdf:about="&umbel;Plants">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Plants">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -988,24 +972,22 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
 
     <!-- http://umbel.org/umbel#Products -->
 
-    <owl:Class rdf:about="&umbel;Products">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Products">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1017,37 +999,37 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
 
     <!-- http://umbel.org/umbel#Prokaryotes -->
 
-    <owl:Class rdf:about="&umbel;Prokaryotes">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Prokaryotes">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1059,37 +1041,36 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
 
     <!-- http://umbel.org/umbel#ProtistsFungus -->
 
-    <owl:Class rdf:about="&umbel;ProtistsFungus">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#ProtistsFungus">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1101,11 +1082,11 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
 
     <!-- http://umbel.org/umbel#RefConcept -->
 
-    <owl:Class rdf:about="&umbel;RefConcept">
+    <owl:Class rdf:about="http://umbel.org/umbel#RefConcept">
         <rdfs:subClassOf rdf:resource="&skos;Concept"/>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="&umbel;isRelatedTo"/>
+                <owl:onProperty rdf:resource="http://umbel.org/umbel#isRelatedTo"/>
                 <owl:allValuesFrom rdf:resource="&owl;Thing"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1119,35 +1100,34 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#Society -->
 
-    <owl:Class rdf:about="&umbel;Society">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Society">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1159,31 +1139,31 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#StructuredInfo -->
 
-    <owl:Class rdf:about="&umbel;StructuredInfo">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#StructuredInfo">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1195,7 +1175,7 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#SuperType -->
 
-    <owl:Class rdf:about="&umbel;SuperType">
+    <owl:Class rdf:about="http://umbel.org/umbel#SuperType">
         <prefLabel xml:lang="en">SuperType</prefLabel>
         <definition xml:lang="en">SuperTypes are a collection of (mostly) similar Reference Concepts. Most of the SuperType classes have been designed to be (mostly) disjoint from the other SuperType classes. SuperTypes thus provide a higher-level of clustering and organization of Reference Concepts for use in user interfaces and for reasoning purposes.</definition>
     </owl:Class>
@@ -1204,39 +1184,39 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#Time -->
 
-    <owl:Class rdf:about="&umbel;Time">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Time">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Products"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Products"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1248,8 +1228,8 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#TopicsCategories -->
 
-    <owl:Class rdf:about="&umbel;TopicsCategories">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#TopicsCategories">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <definition xml:lang="en">This largely subject-oriented SuperType is a means for using controlled vocabularies and classification schemes for characterizing what content &quot;is about&quot;. The key constituents of this category are Types, Classifications, Concepts, CCC, and controlled vocabularies </definition>
         <prefLabel xml:lang="en">topics categories</prefLabel>
     </owl:Class>
@@ -1258,29 +1238,29 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#VisualInfo -->
 
-    <owl:Class rdf:about="&umbel;VisualInfo">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#VisualInfo">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;FinanceEconomy"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FinanceEconomy"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1292,33 +1272,33 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#Workplaces -->
 
-    <owl:Class rdf:about="&umbel;Workplaces">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#Workplaces">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Notations"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Society"/>
-                    <rdf:Description rdf:about="&umbel;StructuredInfo"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;VisualInfo"/>
-                    <rdf:Description rdf:about="&umbel;WrittenInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Notations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Society"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#StructuredInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#VisualInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#WrittenInfo"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
@@ -1330,33 +1310,33 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
     <!-- http://umbel.org/umbel#WrittenInfo -->
 
-    <owl:Class rdf:about="&umbel;WrittenInfo">
-        <rdfs:subClassOf rdf:resource="&umbel;SuperType"/>
+    <owl:Class rdf:about="http://umbel.org/umbel#WrittenInfo">
+        <rdfs:subClassOf rdf:resource="http://umbel.org/umbel#SuperType"/>
         <owl:disjointWith>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="&umbel;Activities"/>
-                    <rdf:Description rdf:about="&umbel;Animals"/>
-                    <rdf:Description rdf:about="&umbel;AudioInfo"/>
-                    <rdf:Description rdf:about="&umbel;Chemistry"/>
-                    <rdf:Description rdf:about="&umbel;Diseases"/>
-                    <rdf:Description rdf:about="&umbel;Drugs"/>
-                    <rdf:Description rdf:about="&umbel;Earthscape"/>
-                    <rdf:Description rdf:about="&umbel;Events"/>
-                    <rdf:Description rdf:about="&umbel;Extraterrestrial"/>
-                    <rdf:Description rdf:about="&umbel;Facilities"/>
-                    <rdf:Description rdf:about="&umbel;FoodDrink"/>
-                    <rdf:Description rdf:about="&umbel;Geopolitical"/>
-                    <rdf:Description rdf:about="&umbel;NaturalPhenomena"/>
-                    <rdf:Description rdf:about="&umbel;NaturalSubstances"/>
-                    <rdf:Description rdf:about="&umbel;Numbers"/>
-                    <rdf:Description rdf:about="&umbel;Organizations"/>
-                    <rdf:Description rdf:about="&umbel;PersonTypes"/>
-                    <rdf:Description rdf:about="&umbel;Plants"/>
-                    <rdf:Description rdf:about="&umbel;Prokaryotes"/>
-                    <rdf:Description rdf:about="&umbel;ProtistsFungus"/>
-                    <rdf:Description rdf:about="&umbel;Time"/>
-                    <rdf:Description rdf:about="&umbel;Workplaces"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Activities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Animals"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#AudioInfo"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Chemistry"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Diseases"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Drugs"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Earthscape"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Events"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Extraterrestrial"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Facilities"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#FoodDrink"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Geopolitical"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalPhenomena"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#NaturalSubstances"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Numbers"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Organizations"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#PersonTypes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Plants"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Prokaryotes"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#ProtistsFungus"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Time"/>
+                    <rdf:Description rdf:about="http://umbel.org/umbel#Workplaces"/>
                 </owl:unionOf>
             </owl:Class>
         </owl:disjointWith>
