@@ -20,7 +20,7 @@
                          
                          :prefLabel "Upper Mapping and Binding Exchange Layer (UMBEL) Vocabulary"@en ;
                          
-                         owl:versionIRI <http://umbel.org/umbel/v080#> .
+                         owl:versionIRI <http://umbel.org/umbel/v100#> .
 
 
 #################################################################
@@ -56,6 +56,7 @@
 :hiddenLabel rdf:type owl:AnnotationProperty ;
              
              :prefLabel "hidden label"@en .
+rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 #################################################################
@@ -63,6 +64,45 @@
 #    Object Properties
 #
 #################################################################
+
+
+###  http://umbel.org/umbel#correspondsTo
+
+:correspondsTo rdf:type owl:ObjectProperty ,
+                        owl:ReflexiveProperty ,
+                        owl:SymmetricProperty ,
+                        owl:TransitiveProperty ;
+               
+               rdfs:comment """The property umbel:correspondsTo is used to assert a close correspondence between an external class, named entity, individual or instance with a Reference Concept class. umbel:correspondsTo relates the external class, named entity, individual or instance to the class through the basis of both its subject matter and intended scope. This predicate should be used where the correspondence between the two entities is felt to be nearly equivalent to a sameAs assertion, and is reflexive, but without the full entailments of intensional class memberships. In these cases, both entities are understood to have the same type and intended scope, but without asserting a full class-level or sameAs individual relationship.
+
+This predicate is designed for the circumstance of aligning two different ontologies or knowledge bases based on node-level correspondences, but without entailing the actual ontological relationships and structure of the object source. For example, the umbel:correspondsTo predicate is used to assert close correspondence between UMBEL Reference Concepts and Wikipedia categories or pages, yet without entailing the actual Wikipedia category structure.
+
+This property asserts a different and stronger relationship than umbel:isAbout. One practical use is to guide specific instance member determinations when, say, the native structure of the external ontology or knowledge base is to be analyzed and replaced with an UMBEL-based structure.
+
+This property is therefore used to create a nearly equivalent assertion (however, with the degree of that equivalence being unknown or unknowable) between an external instance or class and a Reference Concept class"""@en ;
+               
+               rdfs:range :RefConcept ;
+               
+               rdfs:domain owl:Thing ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#hasMapping
+
+:hasMapping rdf:type owl:ObjectProperty ;
+            
+            :definition "This property is used to reify a umbel:isAbout or a umbel:isRelatedTo property to a mapping percentage value, some quantitative metric value, or a qualitative descriptor characterizing the linkage degree or overlap between the two classes, predicates, individuals or datatypes. This value might be calculated from some external utility. "@en ;
+            
+            :prefLabel "has mapping"@en ;
+            
+            rdfs:domain rdf:Statement ;
+            
+            rdfs:range owl:Thing ;
+            
+            rdfs:subPropertyOf owl:topObjectProperty .
+
 
 
 ###  http://umbel.org/umbel#isAbout
@@ -126,6 +166,520 @@ It is appropriate to use this property when there is strong belief the two resou
 
 
 
+###  http://umbel.org/umbel#relatesToAbstraction
+
+:relatesToAbstraction rdf:type owl:ObjectProperty ;
+                      
+                      :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                      
+                      :prefLabel "has abstraction"@en ;
+                      
+                      rdfs:range :AbstractLevel ;
+                      
+                      rdfs:domain owl:Thing ;
+                      
+                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToActivity
+
+:relatesToActivity rdf:type owl:ObjectProperty ;
+                   
+                   :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                   
+                   :prefLabel "has activity"@en ;
+                   
+                   rdfs:range :Activities ;
+                   
+                   rdfs:domain owl:Thing ;
+                   
+                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToAnimal
+
+:relatesToAnimal rdf:type owl:ObjectProperty ;
+                 
+                 :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                 
+                 :prefLabel "relates to animal"@en ;
+                 
+                 rdfs:range :Animals ;
+                 
+                 rdfs:domain owl:Thing ;
+                 
+                 rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToAttribute
+
+:relatesToAttribute rdf:type owl:ObjectProperty ;
+                    
+                    :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                    
+                    :prefLabel "has attribute"@en ;
+                    
+                    rdfs:range :Attributes ;
+                    
+                    rdfs:domain owl:Thing ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToAudioInfo
+
+:relatesToAudioInfo rdf:type owl:ObjectProperty ;
+                    
+                    :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                    
+                    :prefLabel "relates to audio information"@en ;
+                    
+                    rdfs:range :AudioInfo ;
+                    
+                    rdfs:domain owl:Thing ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToChemistry
+
+:relatesToChemistry rdf:type owl:ObjectProperty ;
+                    
+                    :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                    
+                    :prefLabel "relates to chemistry"@en ;
+                    
+                    rdfs:range :Chemistry ;
+                    
+                    rdfs:domain owl:Thing ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToDisease
+
+:relatesToDisease rdf:type owl:ObjectProperty ;
+                  
+                  :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                  
+                  :prefLabel "relates to disease"@en ;
+                  
+                  rdfs:range :Diseases ;
+                  
+                  rdfs:domain owl:Thing ;
+                  
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToDrug
+
+:relatesToDrug rdf:type owl:ObjectProperty ;
+               
+               :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+               
+               :prefLabel "relates to drug"@en ;
+               
+               rdfs:range :Drugs ;
+               
+               rdfs:domain owl:Thing ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToEarth
+
+:relatesToEarth rdf:type owl:ObjectProperty ;
+                
+                :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                
+                :prefLabel "relates to earthscape"@en ;
+                
+                rdfs:range :Earthscape ;
+                
+                rdfs:domain owl:Thing ;
+                
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToEvent
+
+:relatesToEvent rdf:type owl:ObjectProperty ;
+                
+                :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                
+                :prefLabel "has event"@en ;
+                
+                rdfs:range :Events ;
+                
+                rdfs:domain owl:Thing ;
+                
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToFacility
+
+:relatesToFacility rdf:type owl:ObjectProperty ;
+                   
+                   :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                   
+                   :prefLabel "relates to facility"@en ;
+                   
+                   rdfs:range :Facilities ;
+                   
+                   rdfs:domain owl:Thing ;
+                   
+                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToFinanceEconomy
+
+:relatesToFinanceEconomy rdf:type owl:ObjectProperty ;
+                         
+                         :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                         
+                         :prefLabel "relates to finance or economy"@en ;
+                         
+                         rdfs:range :FinanceEconomy ;
+                         
+                         rdfs:domain owl:Thing ;
+                         
+                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToFoodDrink
+
+:relatesToFoodDrink rdf:type owl:ObjectProperty ;
+                    
+                    :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                    
+                    :prefLabel "has food drink"@en ;
+                    
+                    rdfs:range :FoodDrink ;
+                    
+                    rdfs:domain owl:Thing ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToGeoEntity
+
+:relatesToGeoEntity rdf:type owl:ObjectProperty ;
+                    
+                    :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                    
+                    :prefLabel "relates to geopolitical entity"@en ;
+                    
+                    rdfs:range :Geopolitical ;
+                    
+                    rdfs:domain owl:Thing ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToHeavens
+
+:relatesToHeavens rdf:type owl:ObjectProperty ;
+                  
+                  :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                  
+                  :prefLabel "relates to extraterrestrial entity"@en ;
+                  
+                  rdfs:range :Extraterrestrial ;
+                  
+                  rdfs:domain owl:Thing ;
+                  
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToMarketIndustry
+
+:relatesToMarketIndustry rdf:type owl:ObjectProperty ;
+                         
+                         :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                         
+                         :prefLabel "relates to market or industry"@en ;
+                         
+                         rdfs:range :MarketsIndustries ;
+                         
+                         rdfs:domain owl:Thing ;
+                         
+                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToNotation
+
+:relatesToNotation rdf:type owl:ObjectProperty ;
+                   
+                   :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                   
+                   :prefLabel "has notation"@en ;
+                   
+                   rdfs:range :Notations ;
+                   
+                   rdfs:domain owl:Thing ;
+                   
+                   rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToNumbers
+
+:relatesToNumbers rdf:type owl:ObjectProperty ;
+                  
+                  :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                  
+                  :prefLabel "relates to numbers"@en ;
+                  
+                  rdfs:range :Numbers ;
+                  
+                  rdfs:domain owl:Thing ;
+                  
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToOrganizationType
+
+:relatesToOrganizationType rdf:type owl:ObjectProperty ;
+                           
+                           :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                           
+                           :prefLabel "has organization type"@en ;
+                           
+                           rdfs:range :Organizations ;
+                           
+                           rdfs:domain owl:Thing ;
+                           
+                           rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToOtherOrganism
+
+:relatesToOtherOrganism rdf:type owl:ObjectProperty ;
+                        
+                        :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                        
+                        :prefLabel "relates to other organism"@en ;
+                        
+                        rdfs:domain owl:Thing ;
+                        
+                        rdfs:subPropertyOf owl:topObjectProperty ;
+                        
+                        rdfs:range [ rdf:type owl:Class ;
+                                     owl:unionOf ( :Prokaryotes
+                                                   :ProtistsFungus
+                                                 )
+                                   ] .
+
+
+
+###  http://umbel.org/umbel#relatesToPersonType
+
+:relatesToPersonType rdf:type owl:ObjectProperty ;
+                     
+                     :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                     
+                     :prefLabel "has person type"@en ;
+                     
+                     rdfs:range :PersonTypes ;
+                     
+                     rdfs:domain owl:Thing ;
+                     
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToPhenomenon
+
+:relatesToPhenomenon rdf:type owl:ObjectProperty ;
+                     
+                     :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                     
+                     :prefLabel "relates to natural phenomenon"@en ;
+                     
+                     rdfs:range :NaturalPhenomena ;
+                     
+                     rdfs:domain owl:Thing ;
+                     
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToPlant
+
+:relatesToPlant rdf:type owl:ObjectProperty ;
+                
+                :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                
+                :prefLabel "relates to plant"@en ;
+                
+                rdfs:range :Plants ;
+                
+                rdfs:domain owl:Thing ;
+                
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToProductType
+
+:relatesToProductType rdf:type owl:ObjectProperty ;
+                      
+                      :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                      
+                      :prefLabel "has product type"@en ;
+                      
+                      rdfs:range :Products ;
+                      
+                      rdfs:domain owl:Thing ;
+                      
+                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToSociety
+
+:relatesToSociety rdf:type owl:ObjectProperty ;
+                  
+                  :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                  
+                  :prefLabel "relates to society"@en ;
+                  
+                  rdfs:range :Society ;
+                  
+                  rdfs:domain owl:Thing ;
+                  
+                  rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToStructuredInfo
+
+:relatesToStructuredInfo rdf:type owl:ObjectProperty ;
+                         
+                         :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                         
+                         :prefLabel "relates to structured information"@en ;
+                         
+                         rdfs:range :StructuredInfo ;
+                         
+                         rdfs:domain owl:Thing ;
+                         
+                         rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToSubstance
+
+:relatesToSubstance rdf:type owl:ObjectProperty ;
+                    
+                    :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                    
+                    :prefLabel "relates to natural substance"@en ;
+                    
+                    rdfs:range :NaturalSubstances ;
+                    
+                    rdfs:domain owl:Thing ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToTime
+
+:relatesToTime rdf:type owl:ObjectProperty ;
+               
+               :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+               
+               :prefLabel "has time"@en ;
+               
+               rdfs:range :Time ;
+               
+               rdfs:domain owl:Thing ;
+               
+               rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToTopic
+
+:relatesToTopic rdf:type owl:ObjectProperty ;
+                
+                :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                
+                :prefLabel "has topic"@en ;
+                
+                rdfs:range :TopicsCategories ;
+                
+                rdfs:domain owl:Thing ;
+                
+                rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToVisualInfo
+
+:relatesToVisualInfo rdf:type owl:ObjectProperty ;
+                     
+                     :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                     
+                     :prefLabel "relates to visual information"@en ;
+                     
+                     rdfs:range :VisualInfo ;
+                     
+                     rdfs:domain owl:Thing ;
+                     
+                     rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToWorkplace
+
+:relatesToWorkplace rdf:type owl:ObjectProperty ;
+                    
+                    :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
+                    
+                    :prefLabel "has workplace"@en ;
+                    
+                    rdfs:range :Workplaces ;
+                    
+                    rdfs:domain owl:Thing ;
+                    
+                    rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
+###  http://umbel.org/umbel#relatesToWrittenInfo
+
+:relatesToWrittenInfo rdf:type owl:ObjectProperty ;
+                      
+                      :definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship."@en ;
+                      
+                      :prefLabel "relates to written information"@en ;
+                      
+                      rdfs:domain owl:Thing ;
+                      
+                      rdfs:subPropertyOf owl:topObjectProperty .
+
+
+
 ###  http://www.w3.org/2002/07/owl#topObjectProperty
 
 owl:topObjectProperty rdf:type owl:ObjectProperty .
@@ -139,22 +693,6 @@ owl:topObjectProperty rdf:type owl:ObjectProperty .
 #    Data properties
 #
 #################################################################
-
-
-###  http://umbel.org/umbel#hasMapping
-
-:hasMapping rdf:type owl:DatatypeProperty ;
-            
-            :definition "This property is used to reify a umbel:isAbout or a umbel:isRelatedTo property to a mapping percentage value, some quantitative metric value, or a qualitative descriptor characterizing the linkage degree or overlap between the two classes, predicates, individuals or datatypes. This value might be calculated from some external utility. "@en ;
-            
-            :prefLabel "has mapping"@en ;
-            
-            rdfs:domain rdf:Statement ;
-            
-            rdfs:range rdfs:Literal ;
-            
-            rdfs:subPropertyOf owl:topDataProperty .
-
 
 
 ###  http://www.w3.org/2002/07/owl#topDataProperty
@@ -194,14 +732,12 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                owl:unionOf ( :Animals
                                              :AudioInfo
                                              :Chemistry
-                                             :Diseases
                                              :Drugs
                                              :Earthscape
                                              :Extraterrestrial
                                              :Facilities
                                              :Geopolitical
                                              :NaturalSubstances
-                                             :Notations
                                              :Numbers
                                              :Organizations
                                              :PersonTypes
@@ -210,9 +746,7 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                              :ProtistsFungus
                                              :Society
                                              :Time
-                                             :VisualInfo
                                              :Workplaces
-                                             :WrittenInfo
                                            )
                              ] ;
             
@@ -239,6 +773,7 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                           :FinanceEconomy
                                           :Geopolitical
                                           :NaturalPhenomena
+                                          :NaturalSubstances
                                           :Notations
                                           :Numbers
                                           :Plants
@@ -355,8 +890,7 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
           rdfs:subClassOf :SuperType ;
           
           owl:disjointWith [ rdf:type owl:Class ;
-                             owl:unionOf ( :Activities
-                                           :AudioInfo
+                             owl:unionOf ( :AudioInfo
                                            :Chemistry
                                            :Drugs
                                            :Earthscape
@@ -365,6 +899,7 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                            :FinanceEconomy
                                            :FoodDrink
                                            :Geopolitical
+                                           :NaturalPhenomena
                                            :Notations
                                            :Numbers
                                            :Organizations
@@ -440,7 +975,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                              :Diseases
                                              :Drugs
                                              :Events
-                                             :Extraterrestrial
                                              :FoodDrink
                                              :NaturalPhenomena
                                              :Notations
@@ -480,7 +1014,6 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                          :Facilities
                                          :Geopolitical
                                          :NaturalSubstances
-                                         :Notations
                                          :Numbers
                                          :Organizations
                                          :PersonTypes
@@ -488,9 +1021,7 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                          :Prokaryotes
                                          :ProtistsFungus
                                          :Society
-                                         :Time
                                          :Workplaces
-                                         :WrittenInfo
                                        )
                          ] ;
         
@@ -513,7 +1044,6 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                                    :Chemistry
                                                    :Diseases
                                                    :Drugs
-                                                   :Earthscape
                                                    :Facilities
                                                    :FinanceEconomy
                                                    :FoodDrink
@@ -556,9 +1086,7 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                              :Events
                                              :Extraterrestrial
                                              :FoodDrink
-                                             :Geopolitical
                                              :NaturalPhenomena
-                                             :NaturalSubstances
                                              :Notations
                                              :Numbers
                                              :Organizations
@@ -633,6 +1161,7 @@ Facilities also include the component parts that go into making them (such as fo
                                             :Notations
                                             :Numbers
                                             :Organizations
+                                            :PersonTypes
                                             :Prokaryotes
                                             :Society
                                             :StructuredInfo
@@ -664,7 +1193,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                :Drugs
                                                :Events
                                                :Extraterrestrial
-                                               :Facilities
                                                :FoodDrink
                                                :NaturalPhenomena
                                                :Notations
@@ -749,7 +1277,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                     :AudioInfo
                                                     :Diseases
                                                     :Events
-                                                    :Facilities
                                                     :NaturalPhenomena
                                                     :Notations
                                                     :Numbers
@@ -780,12 +1307,10 @@ Facilities also include the component parts that go into making them (such as fo
            rdfs:subClassOf :SuperType ;
            
            owl:disjointWith [ rdf:type owl:Class ;
-                              owl:unionOf ( :Activities
-                                            :Animals
+                              owl:unionOf ( :Animals
                                             :Diseases
                                             :Drugs
                                             :Earthscape
-                                            :Events
                                             :Extraterrestrial
                                             :Facilities
                                             :FoodDrink
@@ -797,6 +1322,7 @@ Facilities also include the component parts that go into making them (such as fo
                                             :Plants
                                             :Prokaryotes
                                             :ProtistsFungus
+                                            :Society
                                             :Time
                                             :Workplaces
                                           )
@@ -839,7 +1365,6 @@ Identifiers (numeric or alphanumeric identifiers for objects, often in a highly 
                                           :Prokaryotes
                                           :ProtistsFungus
                                           :Society
-                                          :StructuredInfo
                                           :Time
                                           :VisualInfo
                                           :Workplaces
@@ -911,6 +1436,7 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                               :Extraterrestrial
                                               :Facilities
                                               :FinanceEconomy
+                                              :FoodDrink
                                               :Geopolitical
                                               :NaturalPhenomena
                                               :NaturalSubstances
@@ -1084,6 +1610,16 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
 
 
 
+###  http://umbel.org/umbel#Qualifier
+
+:Qualifier rdf:type owl:Class ;
+           
+           :definition "The Qualifier class is a set of descriptions that indicate the method used in order to establish an isAbout relationship between an UMBEL reference concept (RC) and an external entity. This description should be complete enough to aid understanding of the nature and reliability of the \"aboutness\" assertion and to be usable for filtering or user interface information. The descriptions may be literal strings or may refer to literal numeric values resulting from an automated alignment technique."@en ;
+           
+           :prefLabel "qualifier"@en .
+
+
+
 ###  http://umbel.org/umbel#RefConcept
 
 :RefConcept rdf:type owl:Class ;
@@ -1123,6 +1659,7 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                           :Geopolitical
                                           :NaturalPhenomena
                                           :NaturalSubstances
+                                          :Notations
                                           :Numbers
                                           :Plants
                                           :Products
@@ -1159,7 +1696,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                                  :FoodDrink
                                                  :Geopolitical
                                                  :NaturalSubstances
-                                                 :Numbers
                                                  :Organizations
                                                  :PersonTypes
                                                  :Plants
@@ -1201,7 +1737,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                        :Diseases
                                        :Drugs
                                        :Earthscape
-                                       :Events
                                        :Extraterrestrial
                                        :Facilities
                                        :FinanceEconomy
@@ -1250,8 +1785,7 @@ Reference Concepts are selected for their use as concrete, subject-related or co
             rdfs:subClassOf :SuperType ;
             
             owl:disjointWith [ rdf:type owl:Class ;
-                               owl:unionOf ( :Activities
-                                             :Animals
+                               owl:unionOf ( :Animals
                                              :Diseases
                                              :Drugs
                                              :Earthscape
@@ -1322,14 +1856,12 @@ Reference Concepts are selected for their use as concrete, subject-related or co
              rdfs:subClassOf :SuperType ;
              
              owl:disjointWith [ rdf:type owl:Class ;
-                                owl:unionOf ( :Activities
-                                              :Animals
+                                owl:unionOf ( :Animals
                                               :AudioInfo
                                               :Chemistry
                                               :Diseases
                                               :Drugs
                                               :Earthscape
-                                              :Events
                                               :Extraterrestrial
                                               :Facilities
                                               :FoodDrink
@@ -1374,6 +1906,124 @@ owl:Thing rdf:type owl:Class .
 ###  http://www.w3.org/2004/02/skos/core#Concept
 
 skos:Concept rdf:type owl:Class .
+
+
+
+
+
+#################################################################
+#
+#    Individuals
+#
+#################################################################
+
+
+###  http://umbel.org/umbel#AutomaticInspectedSMatch
+
+:AutomaticInspectedSMatch rdf:type :Qualifier ,
+                                   owl:NamedIndividual ;
+                          
+                          :prefLabel "Automatic - Inspected S-Match"@en ;
+                          
+                          :definition "Mapping based on automatic scoring of concepts using S-Match, with specific alignment choice based on hand selection."@en .
+
+
+
+###  http://umbel.org/umbel#AutomaticInspectedSV
+
+:AutomaticInspectedSV rdf:type :Qualifier ,
+                               owl:NamedIndividual ;
+                      
+                      :prefLabel "Automatic - Inspected SV"@en ;
+                      
+                      :definition "Mapping based on automatic scoring of concepts using Semantic Vectors, with specific alignment choice based on hand selection."@en .
+
+
+
+###  http://umbel.org/umbel#AutomaticNotSpecified
+
+:AutomaticNotSpecified rdf:type :Qualifier ,
+                                owl:NamedIndividual ;
+                       
+                       :prefLabel "Automatic - Not Specified"@en ,
+                                  "Mapping based on automatic scoring of concepts using a script or technique not otherwise specified."@en .
+
+
+
+###  http://umbel.org/umbel#ExternalDBOntologyMapping
+
+:ExternalDBOntologyMapping rdf:type :Qualifier ,
+                                    owl:NamedIndividual ;
+                           
+                           :prefLabel "External - DBOntology Mapping"@en ;
+                           
+                           :definition "Mapping based on existing DBOntology assertion."@en .
+
+
+
+###  http://umbel.org/umbel#ExternalGeoNamesMapping
+
+:ExternalGeoNamesMapping rdf:type :Qualifier ,
+                                  owl:NamedIndividual ;
+                         
+                         :prefLabel "External - GeoNames Mapping"@en ;
+                         
+                         :definition "Mapping based on existing GeoNames assertion."@en .
+
+
+
+###  http://umbel.org/umbel#ExternalOpenCycMapping
+
+:ExternalOpenCycMapping rdf:type :Qualifier ,
+                                 owl:NamedIndividual ;
+                        
+                        :prefLabel "External - OpenCyc Mapping"@en ;
+                        
+                        :definition "Mapping based on existing OpenCyc assertion."@en .
+
+
+
+###  http://umbel.org/umbel#HeuristicListOfBasis
+
+:HeuristicListOfBasis rdf:type :Qualifier ,
+                               owl:NamedIndividual ;
+                      
+                      :prefLabel "Heuristic - ListOf Basis"@en ;
+                      
+                      :definition "Type assignment based on Wikipedia ListOf category."@en .
+
+
+
+###  http://umbel.org/umbel#HeuristicNotSpecified
+
+:HeuristicNotSpecified rdf:type :Qualifier ,
+                                owl:NamedIndividual ;
+                       
+                       :prefLabel "Heuristic - Not Specified"@en ;
+                       
+                       :definition "Heuristic mapping method applied; script or technique not otherwise specified."@en .
+
+
+
+###  http://umbel.org/umbel#ManualNearlyEquivalent
+
+:ManualNearlyEquivalent rdf:type :Qualifier ,
+                                 owl:NamedIndividual ;
+                        
+                        :prefLabel "Manual - Nearly Equivalent"@en ;
+                        
+                        :definition "The two mapped concepts are deemed to be nearly an equivalentClass or sameAs relationship, but not 100% so."@en .
+
+
+
+###  http://umbel.org/umbel#ManualSimilarSense
+
+:ManualSimilarSense rdf:type :Qualifier ,
+                             owl:NamedIndividual ;
+                    
+                    :prefLabel "Manual - Similar Sense"@en ;
+                    
+                    :definition "The two mapped concepts share much overlap, but are not the exact same sense, such as an action as related to the thing it acts upo."@en .
 
 
 
