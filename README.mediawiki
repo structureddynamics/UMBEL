@@ -1,0 +1,13 @@
+== Introduction ==
+
+UMBEL is the Upper Mapping and Binding Exchange Layer, designed to help content interoperate on the Web.
+
+UMBEL provides two valuable functions:
+
+First, it is a broad, general reference structure of 28,000 concepts, which provides a scaffolding to link and interoperate other datasets and domain vocabularies, and Second, it is a base vocabulary for the construction of other concept-based domain ontologies, also designed for interoperation.
+
+== Documentation ==
+
+All the documentation related to umbel is available on [http://umbel.org UMBEL's main website].
+
+From that website, you can easily search and browse the ontology. All the fonctionalities of this portal are supposed by the [http://openstructs.org/open-semantic-framework Open Semantic Framework (OSF)] and more precisely [https://github.com/structureddynamics/structWSF-Open-Semantic-Framework structWSF].
