@@ -20,7 +20,7 @@
                          
                          skos:prefLabel "Upper Mapping and Binding Exchange Layer (UMBEL) Vocabulary"@en ;
                          
-                         owl:versionIRI <http://umbel.org/umbel/v100#> ;
+                         owl:versionIRI <http://umbel.org/umbel/v101#> ;
                          
                          owl:imports <http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> .
 
@@ -111,7 +111,6 @@ skos:altLabel rdf:type owl:AnnotationProperty .
 ###  http://umbel.org/umbel#correspondsTo
 
 :correspondsTo rdf:type owl:ObjectProperty ,
-                        owl:ReflexiveProperty ,
                         owl:SymmetricProperty ,
                         owl:TransitiveProperty ;
                
@@ -785,8 +784,7 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
             rdfs:subClassOf :SuperType ;
             
             owl:disjointWith [ rdf:type owl:Class ;
-                               owl:unionOf ( :Animals
-                                             :AudioInfo
+                               owl:unionOf ( :AudioInfo
                                              :Chemistry
                                              :Drugs
                                              :Earthscape
@@ -796,12 +794,9 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                              :NaturalSubstances
                                              :Numbers
                                              :Organizations
-                                             :PersonTypes
                                              :Plants
                                              :Prokaryotes
                                              :ProtistsFungus
-                                             :Society
-                                             :Time
                                              :Workplaces
                                            )
                              ] ;
@@ -819,11 +814,9 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
          rdfs:subClassOf :SuperType ;
          
          owl:disjointWith [ rdf:type owl:Class ;
-                            owl:unionOf ( :Activities
-                                          :AudioInfo
+                            owl:unionOf ( :AudioInfo
                                           :Drugs
                                           :Earthscape
-                                          :Events
                                           :Extraterrestrial
                                           :Facilities
                                           :FinanceEconomy
@@ -916,7 +909,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                             :Facilities
                                             :FinanceEconomy
                                             :Geopolitical
-                                            :NaturalPhenomena
                                             :Notations
                                             :Numbers
                                             :Organizations
@@ -959,7 +951,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                            :Notations
                                            :Numbers
                                            :Organizations
-                                           :PersonTypes
                                            :Plants
                                            :Products
                                            :Prokaryotes
@@ -1064,19 +1055,16 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
         rdfs:subClassOf :SuperType ;
         
         owl:disjointWith [ rdf:type owl:Class ;
-                           owl:unionOf ( :Animals
-                                         :Drugs
+                           owl:unionOf ( :Drugs
                                          :Earthscape
                                          :Facilities
                                          :Geopolitical
                                          :NaturalSubstances
                                          :Numbers
                                          :Organizations
-                                         :PersonTypes
                                          :Plants
                                          :Prokaryotes
                                          :ProtistsFungus
-                                         :Society
                                          :Workplaces
                                        )
                          ] ;
@@ -1142,10 +1130,8 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                              :Events
                                              :Extraterrestrial
                                              :FoodDrink
-                                             :NaturalPhenomena
                                              :Notations
                                              :Numbers
-                                             :Organizations
                                              :PersonTypes
                                              :Plants
                                              :Prokaryotes
@@ -1195,7 +1181,7 @@ Facilities also include the component parts that go into making them (such as fo
                 
                 skos:definition "This SuperType pertains to all things financial and with respect to the economy, including chartable company performance, stock index entities, money, local currencies, taxes, incomes, accounts and accounting, mortgages and property. "@en ;
                 
-                skos:prefLabel "fnance and economy"@en .
+                skos:prefLabel "finance and economy"@en .
 
 
 
@@ -1255,7 +1241,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                :Numbers
                                                :PersonTypes
                                                :Plants
-                                               :Products
                                                :Prokaryotes
                                                :ProtistsFungus
                                                :Society
@@ -1293,14 +1278,11 @@ Facilities also include the component parts that go into making them (such as fo
                   owl:disjointWith [ rdf:type owl:Class ;
                                      owl:unionOf ( :Animals
                                                    :AudioInfo
-                                                   :Chemistry
                                                    :Drugs
                                                    :Earthscape
-                                                   :Facilities
                                                    :FinanceEconomy
                                                    :FoodDrink
                                                    :Geopolitical
-                                                   :NaturalSubstances
                                                    :Notations
                                                    :Numbers
                                                    :Organizations
@@ -1333,7 +1315,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                     :AudioInfo
                                                     :Diseases
                                                     :Events
-                                                    :NaturalPhenomena
                                                     :Notations
                                                     :Numbers
                                                     :Organizations
@@ -1342,7 +1323,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                     :Prokaryotes
                                                     :ProtistsFungus
                                                     :Society
-                                                    :StructuredInfo
                                                     :Time
                                                     :VisualInfo
                                                     :Workplaces
@@ -1448,7 +1428,6 @@ Identifiers (numeric or alphanumeric identifiers for objects, often in a highly 
                                                 :Drugs
                                                 :Events
                                                 :Extraterrestrial
-                                                :Facilities
                                                 :FoodDrink
                                                 :NaturalPhenomena
                                                 :NaturalSubstances
@@ -1482,13 +1461,10 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
              rdfs:subClassOf :SuperType ;
              
              owl:disjointWith [ rdf:type owl:Class ;
-                                owl:unionOf ( :Activities
-                                              :AudioInfo
+                                owl:unionOf ( :AudioInfo
                                               :Chemistry
-                                              :Diseases
                                               :Drugs
                                               :Earthscape
-                                              :Events
                                               :Extraterrestrial
                                               :Facilities
                                               :FinanceEconomy
@@ -1510,8 +1486,9 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                             )
                               ] ;
              
-             skos:prefLabel "The appropriate SuperType for all named, individual human beings. This SuperType also includes the assignment of formal, honorific or cultural titles given to specific human individuals. It further includes names given to humans who conduct specific jobs or activities (the latter case is known as an avocation). Examples include steelworker, waitress, lawyer, plumber, artisan. Ethnic groups are specifically included."@en ,
-                            "person types"@en .
+             skos:definition "The appropriate SuperType for all named, individual human beings. This SuperType also includes the assignment of formal, honorific or cultural titles given to specific human individuals. It further includes names given to humans who conduct specific jobs or activities (the latter case is known as an avocation). Examples include steelworker, waitress, lawyer, plumber, artisan. Ethnic groups are specifically included."@en ;
+             
+             skos:prefLabel "person types"@en .
 
 
 
@@ -1565,7 +1542,6 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
           owl:disjointWith [ rdf:type owl:Class ;
                              owl:unionOf ( :Diseases
                                            :Extraterrestrial
-                                           :Geopolitical
                                            :NaturalPhenomena
                                            :Numbers
                                            :Organizations
@@ -1701,13 +1677,11 @@ Reference Concepts are selected for their use as concrete, subject-related or co
          rdfs:subClassOf :SuperType ;
          
          owl:disjointWith [ rdf:type owl:Class ;
-                            owl:unionOf ( :Activities
-                                          :AudioInfo
+                            owl:unionOf ( :AudioInfo
                                           :Chemistry
                                           :Diseases
                                           :Drugs
                                           :Earthscape
-                                          :Events
                                           :Extraterrestrial
                                           :Facilities
                                           :FinanceEconomy
@@ -1751,7 +1725,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                                  :Facilities
                                                  :FoodDrink
                                                  :Geopolitical
-                                                 :NaturalSubstances
                                                  :Organizations
                                                  :PersonTypes
                                                  :Plants
@@ -1775,9 +1748,7 @@ Reference Concepts are selected for their use as concrete, subject-related or co
            
            skos:prefLabel "SuperType"@en ;
            
-           skos:definition "SuperTypes are a collection of (mostly) similar Reference Concepts. Most of the SuperType classes have been designed to be (mostly) disjoint from the other SuperType classes. SuperTypes thus provide a higher-level of clustering and organization of Reference Concepts for use in user interfaces and for reasoning purposes."@en ;
-           
-           skos:altLabel "test" .
+           skos:definition "SuperTypes are a collection of (mostly) similar Reference Concepts. Most of the SuperType classes have been designed to be (mostly) disjoint from the other SuperType classes. SuperTypes thus provide a higher-level of clustering and organization of Reference Concepts for use in user interfaces and for reasoning purposes."@en .
 
 
 
@@ -1788,8 +1759,7 @@ Reference Concepts are selected for their use as concrete, subject-related or co
       rdfs:subClassOf :SuperType ;
       
       owl:disjointWith [ rdf:type owl:Class ;
-                         owl:unionOf ( :Activities
-                                       :Animals
+                         owl:unionOf ( :Animals
                                        :AudioInfo
                                        :Chemistry
                                        :Diseases
@@ -1940,43 +1910,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
              skos:definition "This SuperType includes any general material written by humans including books, blogs, articles, manuscripts, but any written information conveyed via text."@en ;
              
              skos:prefLabel "written information"@en .
-
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
-
-rdf:Property rdf:type owl:Class .
-
-
-
-###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
-
-rdf:Statement rdf:type owl:Class ;
-              
-              skos:altLabel "test" ;
-              
-              skos:prefLabel "test" .
-
-
-
-###  http://www.w3.org/2002/07/owl#Class
-
-owl:Class rdf:type owl:Class .
-
-
-
-###  http://www.w3.org/2002/07/owl#Thing
-
-owl:Thing rdf:type owl:Class .
-
-
-
-###  http://www.w3.org/2004/02/skos/core#Concept
-
-skos:Concept rdf:type owl:Class .
-
-
-
 
 
 #################################################################
