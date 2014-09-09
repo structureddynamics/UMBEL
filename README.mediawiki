@@ -10,4 +10,4 @@ First, it is a broad, general reference structure of 28,000 concepts, which prov
 
 All the documentation related to umbel is available on [http://umbel.org UMBEL's main website].
 
-From that website, you can easily search and browse the ontology. All the fonctionalities of this portal are supposed by the [http://openstructs.org/open-semantic-framework Open Semantic Framework (OSF)] and more precisely [https://github.com/structureddynamics/structWSF-Open-Semantic-Framework structWSF].
+From that website, you can easily search and browse the ontology. This portal is supported by a rich set of APIs and functionality written in Clojure.
