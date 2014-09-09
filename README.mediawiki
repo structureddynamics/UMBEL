@@ -10,4 +10,4 @@ First, it is a broad, general reference structure of 28,000 concepts, which prov
 
 All the documentation related to UMBEL is available on [http://umbel.org UMBEL's main website].
 
-From that website, you can easily search and browse the ontology. This portal is supported by a rich set of APIs and functionality written in Clojure.
+From that website, you can easily search and browse the ontology. The UMBEL portal is supported by a rich set of APIs and functionality written in Clojure.
