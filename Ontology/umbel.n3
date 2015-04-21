@@ -13,14 +13,13 @@
                          
                          <http://purl.org/vocab/vann/preferredNamespacePrefix> "umbel" ;
                          
-                         <http://purl.org/dc/elements/1.1/creator> "Ontotext AD"@en ,
-                                                                   "Structured Dynamics LLC"@en ;
+                         <http://purl.org/dc/elements/1.1/creator> "Structured Dynamics LLC"@en ;
                          
                          skos:definition "UMBEL (Upper Mapping and Binding Exchange Layer) vocabulary provides a general vocabulary (the UMBEL \"vocabulary\") of classes and predicates for describing domain ontologies, with the specific aim of promoting interoperability with external datasets and domains."@en ;
                          
                          skos:prefLabel "Upper Mapping and Binding Exchange Layer (UMBEL) Vocabulary"@en ;
                          
-                         owl:versionIRI <http://umbel.org/umbel/v101#> ;
+                         owl:versionIRI <http://umbel.org/umbel/v120#> ;
                          
                          owl:imports <http://www.w3.org/TR/skos-reference/skos-owl1-dl.rdf> .
 
@@ -32,21 +31,51 @@
 #################################################################
 
 
-<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
-
-
+###  http://purl.org/dc/elements/1.1/contributor
 
 <http://purl.org/dc/elements/1.1/contributor> rdf:type owl:AnnotationProperty .
 
 
 
+###  http://purl.org/dc/elements/1.1/creator
+
+<http://purl.org/dc/elements/1.1/creator> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+
+<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
+
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+
 <http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
 
 
 
-skos:prefLabel rdf:type owl:AnnotationProperty .
+###  http://umbel.org/umbel#hasCharacteristic
+
+:hasCharacteristic rdf:type owl:AnnotationProperty ;
+                   
+                   skos:definition "The property umbel:hasCharacteristic is used to assert the relation between a Reference Concept and external properties that may be used in external ontologies to characterize, describe, or provide attributes for data records associated with that concept. It is via this property or its inverse, umbel:isCharacteristicOf, that external data characterizations may be incorporated and modeled within a domain ontology based on the UMBEL vocabulary."@en ;
+                   
+                   skos:prefLabel "has characteristic"@en .
 
 
+
+###  http://umbel.org/umbel#isCharacteristicOf
+
+:isCharacteristicOf rdf:type owl:AnnotationProperty ;
+                    
+                    skos:definition "The property umbel:isCharacteristicOf is used to assert the relation between a property and a Reference Concept (or its punned individual) to which it applies. Such properties may be used in external ontologies to characterize, describe, or provide attributes for data records associated with that concept. It is via this property or its inverse, umbel:hasCharacteristic, that external data characterizations may be incorporated and modeled within a domain ontology based on the UMBEL vocabulary."@en ;
+                    
+                    skos:prefLabel "is characteristic of"@en .
+
+
+
+###  http://umbel.org/umbel#superPropertyOf
 
 :superPropertyOf rdf:type owl:AnnotationProperty ;
                  
@@ -58,45 +87,28 @@ skos:prefLabel rdf:type owl:AnnotationProperty .
 
 
 
-<http://purl.org/vocab/vann/preferredNamespacePrefix> rdf:type owl:AnnotationProperty .
-
-
-
-skos:definition rdf:type owl:AnnotationProperty .
-
-
-
-:hasCharacteristic rdf:type owl:AnnotationProperty ;
-                   
-                   skos:definition "The property umbel:hasCharacteristic is used to assert the relation between a Reference Concept and external properties that may be used in external ontologies to characterize, describe, or provide attributes for data records associated with that concept. It is via this property or its inverse, umbel:isCharacteristicOf, that external data characterizations may be incorporated and modeled within a domain ontology based on the UMBEL vocabulary."@en ;
-                   
-                   skos:prefLabel "has characteristic"@en .
-
-
-
-:isCharacteristicOf rdf:type owl:AnnotationProperty ;
-                    
-                    skos:definition "The property umbel:isCharacteristicOf is used to assert the relation between a property and a Reference Concept (or its punned individual) to which it applies. Such properties may be used in external ontologies to characterize, describe, or provide attributes for data records associated with that concept. It is via this property or its inverse, umbel:hasCharacteristic, that external data characterizations may be incorporated and modeled within a domain ontology based on the UMBEL vocabulary."@en ;
-                    
-                    skos:prefLabel "is characteristic of"@en .
-
-
+###  http://www.w3.org/2000/01/rdf-schema#comment
 
 rdfs:comment rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.w3.org/2004/02/skos/core#altLabel
+
 skos:altLabel rdf:type owl:AnnotationProperty .
 
 
 
+###  http://www.w3.org/2004/02/skos/core#definition
+
+skos:definition rdf:type owl:AnnotationProperty .
 
 
-#################################################################
-#
-#    Datatypes
-#
-#################################################################
+
+###  http://www.w3.org/2004/02/skos/core#prefLabel
+
+skos:prefLabel rdf:type owl:AnnotationProperty .
+
 
 
 
@@ -183,9 +195,9 @@ It is appropriate to use this property when there is strong belief the two resou
         
         skos:prefLabel "is like"@en ;
         
-        rdfs:range owl:Thing ;
-        
         rdfs:domain owl:Thing ;
+        
+        rdfs:range owl:Thing ;
         
         rdfs:subPropertyOf owl:topObjectProperty .
 
@@ -691,22 +703,6 @@ It is appropriate to use this property when there is strong belief the two resou
 
 
 
-###  http://umbel.org/umbel#relatesToWorkplace
-
-:relatesToWorkplace rdf:type owl:ObjectProperty ;
-                    
-                    skos:definition "This predicate relates an external entity to the SuperType (ST) shown. It indicates there is a relationship to the ST of a verifiable nature, but which is undetermined as to strength or a full rdf:type relationship "@en ;
-                    
-                    skos:prefLabel "has workplace"@en ;
-                    
-                    rdfs:range :Workplaces ;
-                    
-                    rdfs:domain owl:Thing ;
-                    
-                    rdfs:subPropertyOf owl:topObjectProperty .
-
-
-
 ###  http://umbel.org/umbel#relatesToWrittenInfo
 
 :relatesToWrittenInfo rdf:type owl:ObjectProperty ;
@@ -729,9 +725,7 @@ It is appropriate to use this property when there is strong belief the two resou
                  
                  skos:prefLabel "super property of"@en ;
                  
-                 rdfs:range rdf:Property ;
-                 
-                 rdfs:domain rdf:Property .
+                 rdfs:range rdf:Property .
 
 
 
@@ -770,6 +764,7 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
 :AbstractLevel rdf:type owl:Class ;
                
                rdfs:subClassOf :SuperType ;
+
                
                skos:definition "This general SuperType category is largely composed of former AbstractConcepts, and represent some of the more abstract upper-level nodes for connecting the UMBEL structure together. This SuperType also includes theories or processes or methods for humans to do stuff or any human technology "@en ;
                
@@ -785,7 +780,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
             
             owl:disjointWith [ rdf:type owl:Class ;
                                owl:unionOf ( :AudioInfo
-                                             :Chemistry
                                              :Drugs
                                              :Earthscape
                                              :Extraterrestrial
@@ -797,7 +791,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                              :Plants
                                              :Prokaryotes
                                              :ProtistsFungus
-                                             :Workplaces
                                            )
                              ] ;
             
@@ -831,7 +824,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                           :StructuredInfo
                                           :Time
                                           :VisualInfo
-                                          :Workplaces
                                           :WrittenInfo
                                         )
                           ] ;
@@ -883,7 +875,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                             :Society
                                             :StructuredInfo
                                             :Time
-                                            :Workplaces
                                             :WrittenInfo
                                           )
                             ] ;
@@ -901,8 +892,7 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
            rdfs:subClassOf :SuperType ;
            
            owl:disjointWith [ rdf:type owl:Class ;
-                              owl:unionOf ( :Activities
-                                            :AudioInfo
+                              owl:unionOf ( :AudioInfo
                                             :Diseases
                                             :Earthscape
                                             :Extraterrestrial
@@ -920,7 +910,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                             :StructuredInfo
                                             :Time
                                             :VisualInfo
-                                            :Workplaces
                                             :WrittenInfo
                                           )
                             ] ;
@@ -959,7 +948,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                            :StructuredInfo
                                            :Time
                                            :VisualInfo
-                                           :Workplaces
                                            :WrittenInfo
                                          )
                            ] ;
@@ -997,7 +985,6 @@ owl:topDataProperty rdf:type owl:DatatypeProperty .
                                         :StructuredInfo
                                         :Time
                                         :VisualInfo
-                                        :Workplaces
                                         :WrittenInfo
                                       )
                         ] ;
@@ -1048,6 +1035,18 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
 
 
 
+###  http://umbel.org/umbel#Entities
+
+:Entities rdf:type owl:Class ;
+          
+          rdfs:subClassOf :SuperType ;
+          
+          skos:definition "The Entities category is the largest UMBEL SuperType and includes all nameable and tangible things within UMBEL. Entities are often independent or separate, and are sometimes known as individuals or instances. Entities may be part of something else when it is an identifiable thing by name, as \"lung\" is to \"animal body\". Entity types, which are collections of similar entities, are also included in the Entities SuperType. When an entity is assigned a proper name, it is also known as a \"named entity\". The Entities SuperType is non-disjoint with most other SuperTypes."@en ;
+          
+          skos:prefLabel "entities"@en .
+
+
+
 ###  http://umbel.org/umbel#Events
 
 :Events rdf:type owl:Class ;
@@ -1065,7 +1064,6 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                          :Plants
                                          :Prokaryotes
                                          :ProtistsFungus
-                                         :Workplaces
                                        )
                          ] ;
         
@@ -1103,7 +1101,6 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
                                                    :Society
                                                    :StructuredInfo
                                                    :Time
-                                                   :Workplaces
                                                    :WrittenInfo
                                                  )
                                    ] ;
@@ -1147,7 +1144,9 @@ This SuperType is explicitly disjoint with Extraterrestrial (see below). """@en 
 
 Facilities also include animal pens and enclosures and general human \"activity\" areas (golf course, archeology sites, etc.). Iportantly Facilities include infrastructure systems such as roadways and physical networks.
 
-Facilities also include the component parts that go into making them (such as foundations, doors, windows, roofs, etc.) """@en ;
+Facilities also include the component parts that go into making them (such as foundations, doors, windows, roofs, etc.) 
+
+Finally, facilities also include workplaces. Workplaces are areas of human activities, ranging from single person workstations to large aggregations of people (but which are not formal political entities)"""@en ;
             
             skos:prefLabel "facilities"@en .
 
@@ -1204,12 +1203,10 @@ Facilities also include the component parts that go into making them (such as fo
                                             :Numbers
                                             :Organizations
                                             :PersonTypes
-                                            :Prokaryotes
                                             :Society
                                             :StructuredInfo
                                             :Time
                                             :VisualInfo
-                                            :Workplaces
                                             :WrittenInfo
                                           )
                             ] ;
@@ -1293,7 +1290,6 @@ Facilities also include the component parts that go into making them (such as fo
                                                    :ProtistsFungus
                                                    :Society
                                                    :Time
-                                                   :Workplaces
                                                    :WrittenInfo
                                                  )
                                    ] ;
@@ -1319,13 +1315,9 @@ Facilities also include the component parts that go into making them (such as fo
                                                     :Numbers
                                                     :Organizations
                                                     :PersonTypes
-                                                    :Plants
-                                                    :Prokaryotes
-                                                    :ProtistsFungus
                                                     :Society
                                                     :Time
                                                     :VisualInfo
-                                                    :Workplaces
                                                     :WrittenInfo
                                                   )
                                     ] ;
@@ -1360,7 +1352,6 @@ Facilities also include the component parts that go into making them (such as fo
                                             :ProtistsFungus
                                             :Society
                                             :Time
-                                            :Workplaces
                                           )
                             ] ;
            
@@ -1403,7 +1394,6 @@ Identifiers (numeric or alphanumeric identifiers for objects, often in a highly 
                                           :Society
                                           :Time
                                           :VisualInfo
-                                          :Workplaces
                                           :WrittenInfo
                                         )
                           ] ;
@@ -1481,7 +1471,6 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                               :StructuredInfo
                                               :Time
                                               :VisualInfo
-                                              :Workplaces
                                               :WrittenInfo
                                             )
                               ] ;
@@ -1511,18 +1500,15 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                          :FinanceEconomy
                                          :Geopolitical
                                          :NaturalPhenomena
-                                         :NaturalSubstances
                                          :Notations
                                          :Numbers
                                          :Organizations
                                          :PersonTypes
                                          :Prokaryotes
-                                         :ProtistsFungus
                                          :Society
                                          :StructuredInfo
                                          :Time
                                          :VisualInfo
-                                         :Workplaces
                                          :WrittenInfo
                                        )
                          ] ;
@@ -1579,7 +1565,6 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                               :FinanceEconomy
                                               :Geopolitical
                                               :NaturalPhenomena
-                                              :NaturalSubstances
                                               :Notations
                                               :Numbers
                                               :Organizations
@@ -1590,7 +1575,6 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                               :StructuredInfo
                                               :Time
                                               :VisualInfo
-                                              :Workplaces
                                               :WrittenInfo
                                             )
                               ] ;
@@ -1620,18 +1604,15 @@ Finally, Organizations contain the concepts of Industries and Programs and Commu
                                                  :FinanceEconomy
                                                  :Geopolitical
                                                  :NaturalPhenomena
-                                                 :NaturalSubstances
                                                  :Notations
                                                  :Numbers
                                                  :Organizations
                                                  :PersonTypes
-                                                 :Plants
                                                  :Products
                                                  :Society
                                                  :StructuredInfo
                                                  :Time
                                                  :VisualInfo
-                                                 :Workplaces
                                                  :WrittenInfo
                                                )
                                  ] ;
@@ -1698,7 +1679,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                           :StructuredInfo
                                           :Time
                                           :VisualInfo
-                                          :Workplaces
                                         )
                           ] ;
          
@@ -1732,7 +1712,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                                  :ProtistsFungus
                                                  :Society
                                                  :Time
-                                                 :Workplaces
                                                )
                                  ] ;
                 
@@ -1783,7 +1762,6 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                        :Society
                                        :StructuredInfo
                                        :VisualInfo
-                                       :Workplaces
                                        :WrittenInfo
                                      )
                        ] ;
@@ -1829,51 +1807,12 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                              :ProtistsFungus
                                              :Society
                                              :Time
-                                             :Workplaces
                                            )
                              ] ;
             
             skos:definition "any still image or picture or streaming video human work, with or without audio. Examples include graphics, pictures, movies, TV shows, individual shows from a TV show, etc. "@en ;
             
             skos:prefLabel "visual information"@en .
-
-
-
-###  http://umbel.org/umbel#Workplaces
-
-:Workplaces rdf:type owl:Class ;
-            
-            rdfs:subClassOf :SuperType ;
-            
-            owl:disjointWith [ rdf:type owl:Class ;
-                               owl:unionOf ( :Activities
-                                             :Animals
-                                             :AudioInfo
-                                             :Chemistry
-                                             :Diseases
-                                             :Drugs
-                                             :Events
-                                             :Extraterrestrial
-                                             :FoodDrink
-                                             :NaturalPhenomena
-                                             :NaturalSubstances
-                                             :Notations
-                                             :Numbers
-                                             :PersonTypes
-                                             :Plants
-                                             :Prokaryotes
-                                             :ProtistsFungus
-                                             :Society
-                                             :StructuredInfo
-                                             :Time
-                                             :VisualInfo
-                                             :WrittenInfo
-                                           )
-                             ] ;
-            
-            skos:definition "These are various workplaces and areas of human activities, ranging from single person workstations to large aggregations of people (but which are not formal political entities) "@en ;
-            
-            skos:prefLabel "workplaces"@en .
 
 
 
@@ -1903,13 +1842,27 @@ Reference Concepts are selected for their use as concrete, subject-related or co
                                               :Prokaryotes
                                               :ProtistsFungus
                                               :Time
-                                              :Workplaces
                                             )
                               ] ;
              
              skos:definition "This SuperType includes any general material written by humans including books, blogs, articles, manuscripts, but any written information conveyed via text."@en ;
              
              skos:prefLabel "written information"@en .
+
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Property
+
+rdf:Property rdf:type owl:Class .
+
+
+
+###  http://www.w3.org/1999/02/22-rdf-syntax-ns#Statement
+
+rdf:Statement rdf:type owl:Class .
+
+
+
 
 
 #################################################################
@@ -2029,5 +1982,5 @@ Reference Concepts are selected for their use as concrete, subject-related or co
 
 
 
-###  Generated by the OWL API (version 3.3.1957) http://owlapi.sourceforge.net
+###  Generated by the OWL API (version 3.5.0) http://owlapi.sourceforge.net
 
