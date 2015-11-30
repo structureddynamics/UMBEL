@@ -19,9 +19,7 @@
                              
                              skos:prefLabel "Attributes Ontology (UMBEL)"@en ;
                              
-                             skos:definition "This is the Attributes Ontology module of UMBEL (Upper Mapping and Binding Exchange Layer). The UMBEL vocabulary provides a general vocabulary of classes and predicates for describing domain ontologies, with the specific aim of promoting interoperability with external datasets and domains. 
-
-                             This Attribute Ontology module provides the basis for relating descriptive properties (not roles) in external vocabularies and ontologies to UMBEL."@en ;
+                             skos:definition "This is the Attributes Ontology module of UMBEL (Upper Mapping and Binding Exchange Layer). The UMBEL vocabulary provides a general vocabulary of classes and predicates for describing domain ontologies, with the specific aim of promoting interoperability with external datasets and domains.\n\nThis Attribute Ontology module provides the basis for relating descriptive properties (not roles) in external vocabularies and ontologies to UMBEL."@en ;
                              
                              owl:versionInfo "Version 1.20, released April 20, 2015. (This is actually version 0.10 of the AO.) All external mappings updated; full scripting now applied to checking concept consistency, linkages to SuperTypes, completing of definitions, and enforcing of uniqueness to prefLabels (to better distinguish in autocompletion); other coherency checks; as a result, some earlier concepts dropped, resulting in a lower RC total count."@en ;
                              
