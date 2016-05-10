@@ -1,0 +1,26 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://www.w3.org/2006/timezone#TimeZone> rdfs:subClassOf <http://umbel.org/umbel/rc/TimeZone> .
+<http://www.w3.org/2006/time#DayOfWeek> rdfs:subClassOf <http://umbel.org/umbel/rc/DayOfWeekType> .
+<http://www.w3.org/2006/time#DurationDescription> rdfs:subClassOf <http://umbel.org/umbel/rc/Time-Quantity> .
+<http://www.w3.org/2006/time#Friday> owl:sameAs <http://umbel.org/umbel/rc/Friday> .
+<http://www.w3.org/2006/time#Interval> rdfs:subClassOf <http://umbel.org/umbel/rc/TimeInterval> .
+<http://www.w3.org/2006/time#January> rdfs:subClassOf <http://umbel.org/umbel/rc/January> .
+<http://www.w3.org/2006/time#Monday> owl:sameAs <http://umbel.org/umbel/rc/Monday> .
+<http://www.w3.org/2006/time#Saturday> owl:sameAs <http://umbel.org/umbel/rc/Saturday> .
+<http://www.w3.org/2006/time#Sunday> owl:sameAs <http://umbel.org/umbel/rc/Sunday> .
+<http://www.w3.org/2006/time#TemporalEntity> rdfs:subClassOf <http://umbel.org/umbel/rc/TimeAttributes> .
+<http://www.w3.org/2006/time#TemporalUnit> rdfs:subClassOf <http://umbel.org/umbel/rc/TimeParameter> .
+<http://www.w3.org/2006/time#Thursday> owl:sameAs <http://umbel.org/umbel/rc/Thursday> .
+<http://www.w3.org/2006/time#Tuesday> owl:sameAs <http://umbel.org/umbel/rc/Tuesday> .
+<http://www.w3.org/2006/time#unitDay> owl:sameAs <http://umbel.org/umbel/rc/DayOfWeekType> .
+<http://www.w3.org/2006/time#unitHour> owl:sameAs <http://umbel.org/umbel/rc/CalendarHour> .
+<http://www.w3.org/2006/time#unitMinute> owl:sameAs <http://umbel.org/umbel/rc/CalendarMinute> .
+<http://www.w3.org/2006/time#unitMonth> owl:sameAs <http://umbel.org/umbel/rc/CalendarMonth> .
+<http://www.w3.org/2006/time#unitSecond> owl:sameAs <http://umbel.org/umbel/rc/CalendarSecond> .
+<http://www.w3.org/2006/time#unitWeek> owl:sameAs <http://umbel.org/umbel/rc/CalendarWeek> .
+<http://www.w3.org/2006/time#unitYear> owl:sameAs <http://umbel.org/umbel/rc/CalendarYear> .
+<http://www.w3.org/2006/time#Wednesday> owl:sameAs <http://umbel.org/umbel/rc/Wednesday> .
+<http://www.w3.org/2006/time#Year> rdfs:subClassOf <http://umbel.org/umbel/rc/CalendarYear> .
+

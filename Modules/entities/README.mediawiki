@@ -1,1 +1,0 @@
-The Entities module defines all the entities related classes and named individuals.

@@ -1,0 +1,6 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://umbel.org/umbel/rc/Broadcasting> owl:equivalentClass <http://purl.org/ontology/po/Broadcast> .
+<http://umbel.org/umbel/rc/BroadcastMediaProduct> owl:equivalentClass <http://purl.org/ontology/po/Programme> .
+<http://umbel.org/umbel/rc/BroadcastSeriesProduct> owl:equivalentClass <http://purl.org/ontology/po/Series> .
+<http://umbel.org/umbel/rc/RadioStation_Organization> owl:equivalentClass <http://purl.org/ontology/po/Radio> .

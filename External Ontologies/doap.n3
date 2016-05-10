@@ -1,0 +1,13 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://usefulinc.com/ns/doap#Repository> rdfs:subClassOf <http://umbel.org/umbel/rc/InformationStore> .
+<http://usefulinc.com/ns/doap#Specification> rdfs:subClassOf <http://umbel.org/umbel/rc/Specification> .
+<http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> rdfs:subClassOf <http://umbel.org/umbel/rc/SpatialThing> .
+<http://www.w3.org/2004/02/skos/core#Concept> rdfs:subClassOf <http://umbel.org/umbel/rc/Concept> .
+<http://xmlns.com/foaf/0.1/Agent> rdfs:subClassOf <http://umbel.org/umbel/rc/Agent-Generic> .
+<http://xmlns.com/foaf/0.1/Group> rdfs:subClassOf <http://umbel.org/umbel/rc/MultiIndividualAgent> .
+<http://xmlns.com/foaf/0.1/LabelProperty> rdfs:subClassOf <http://umbel.org/umbel/rc/Label-IBO> .
+<http://xmlns.com/foaf/0.1/OnlineAccount> rdfs:subClassOf <http://umbel.org/umbel/rc/Account> .
+<http://xmlns.com/foaf/0.1/Organization> rdfs:subClassOf <http://umbel.org/umbel/rc/Organization> .
+<http://xmlns.com/foaf/0.1/Project> rdfs:subClassOf <http://umbel.org/umbel/rc/Project> .
+

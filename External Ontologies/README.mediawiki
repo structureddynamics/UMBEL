@@ -2,9 +2,23 @@ These are lists of ontologies classes links to different UMBEL Reference Concept
 
 ==Files==
 
-* dbpedia-ontology.n3 -- These are the links between the DBpedia Ontology classes and the UMBEL Reference Concepts. Half of them comes from the linkage between Proton and UMBEL, and half the others come from hand mapping.
-* geonames.n3 -- These are references between Geonames named entities and UMBEL geo concepts. This is a set of umbel:correspondsTo relationships that creates this linkage.
-* opencyc.n3 -- These are the links between the OpenCyc ontology classes and the UMBEL Reference Concepts.
-* schema.org.n3 -- These are the links between the Schema.org ontology classes and the UMBEL Reference Concepts.
-* wikipedia.n3 -- These are the links between the Wikipedia pages and the UMBEL Reference Concepts.
-* same-as.n3 -- These are the links between older UMBEL reference concept URIs and the new, actual, ones.
+* dbpedia-ontology.n3 -- Links between the DBpedia Ontology classes and the UMBEL Reference Concepts. Half of them comes from the linkage between Proton and UMBEL, and half the others come from hand mapping.
+* geonames.n3 -- Geonames
+* opencyc.n3 -- OpenCyc Ontology
+* schema.org.n3 -- Schema.org ontology defines entities known by Google and other search engines
+* wikipedia.n3 -- Links between the Wikipedia pages and the UMBEL Reference Concepts.
+* same-as.n3 -- Links between older UMBEL reference concept URIs and the new, actual, ones.
+* doap.n3 -- DOAP(Description of a Project) is a vocabulary for project description.
+* org.n3 -- The ORG (Core Organization) Ontology is a vocabulary for describing organizational structures for a broad variety of types of organization.
+* oo.n3 -- OO(Open Organizations) is a vocabulary providing supplementary terms for organizations that wish to publish open data about themselves.
+* transit.n3 -- TRANSIT(Transit) is a vocabulary for describing transit systems and routes.
+* time.n3 -- The TIME(Time Ontology) defines temporal entities.
+* bibo.n3 -- BIBO (Bibliographic Ontology)
+* cc.n3 -- CC (CreativeCommons Ontology)
+* event.n3 -- Event Ontology
+* foaf.n3 -- FOAF (Friend Of A Friend Ontology) used to describe people and organizations
+* geo.n3 -- WSG84 Geographic Ontology
+* mo.n3 -- MO (Music Ontology)
+* po.n3 -- PO (Programmes Ontology)
+* rss.n3 -- RSS (Really Simple Syndication Ontology)
+* sioc.n3 -- SIOC (Semantically-Interlinked Online Communities Ontology)

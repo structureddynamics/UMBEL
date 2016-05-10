@@ -1,0 +1,11 @@
+@prefix umbel: <http://umbel.org/umbel#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://purl.org/dc/dcmitype/Text> rdfs:subClassOf <http://umbel.org/umbel/rc/TextString> .
+<http://purl.org/dc/dcmitype/Transfer> rdfs:subClassOf <http://umbel.org/umbel/rc/Terminal-TransferPoint> .
+<http://vocab.org/transit/terms/Fare> rdfs:subClassOf <http://umbel.org/umbel/rc/Fare> .
+<http://vocab.org/transit/terms/Route> rdfs:subClassOf <http://umbel.org/umbel/rc/TravelRoute> .
+<http://vocab.org/transit/terms/Schedule> umbel:isAbout <http://umbel.org/umbel/rc/PublicTransportationScheduleDocument> .
+<http://vocab.org/transit/terms/Station> rdfs:subClassOf <http://umbel.org/umbel/rc/Terminal-TransferPoint> .
+<http://xmlns.com/foaf/0.1/Organization> rdfs:subClassOf <http://umbel.org/umbel/rc/Organization> .
+<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <http://umbel.org/umbel/rc/Person> .

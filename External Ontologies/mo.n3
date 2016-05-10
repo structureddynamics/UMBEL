@@ -1,0 +1,12 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://umbel.org/umbel/rc/MusicPerformanceAgent> owl:equivalentClass <http://purl.org/ontology/mo/MusicArtist> .
+<http://umbel.org/umbel/rc/MusicalPerformer> owl:equivalentClass <http://purl.org/ontology/mo/SoloMusicArtist> .
+<http://umbel.org/umbel/rc/Band_MusicGroup> owl:equivalentClass <http://purl.org/ontology/mo/MusicGroup> .
+<http://umbel.org/umbel/rc/RecordedSoundProduct> owl:equivalentClass <http://purl.org/ontology/mo/Record> .
+<http://umbel.org/umbel/rc/MusicTrack> owl:equivalentClass <http://purl.org/ontology/mo/Track> .
+<http://umbel.org/umbel/rc/Multi_MovementComposition> owl:equivalentClass <http://purl.org/ontology/mo/Movement> .
+<http://umbel.org/umbel/rc/AudioConceptualWork> owl:equivalentClass <http://purl.org/ontology/mo/MusicalWork> .
+<http://umbel.org/umbel/rc/Sound> owl:equivalentClass <http://purl.org/ontology/mo/Sound> .
+<http://umbel.org/umbel/rc/MusicalPerformance> owl:equivalentClass <http://purl.org/ontology/mo/Performance> .
+<http://umbel.org/umbel/rc/InformationRecordingProcess> owl:equivalentClass <http://purl.org/ontology/mo/Recording> .

@@ -1,1 +1,0 @@
-The GEO module defines all the geographic related classes and named individuals. These may be places, geographic concepts, etc.

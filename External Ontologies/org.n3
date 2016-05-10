@@ -1,0 +1,9 @@
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://purl.org/goodrelations/v1#BusinessEntity> rdfs:subClassOf <http://umbel.org/umbel/rc/Business> .
+<http://www.w3.org/ns/org#Organization> rdfs:subClassOf <http://umbel.org/umbel/rc/Organization> .
+<http://www.w3.org/ns/org#Post> rdfs:subClassOf <http://umbel.org/umbel/rc/WorkAgreement> .
+<http://www.w3.org/ns/org#Role> rdfs:subClassOf <http://umbel.org/umbel/rc/Role> .
+<http://www.w3.org/ns/org#Site> rdfs:subClassOf <http://umbel.org/umbel/rc/Place> .
+<http://xmlns.com/foaf/0.1/Agent> rdfs:subClassOf <http://umbel.org/umbel/rc/Agent-Generic> .
+<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <http://umbel.org/umbel/rc/Person> .

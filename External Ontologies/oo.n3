@@ -1,0 +1,11 @@
+@prefix umbel: <http://umbel.org/umbel#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+<http://purl.org/dc/terms/Agent> rdfs:subClassOf <http://umbel.org/umbel/rc/Agent-Generic> .
+<http://purl.org/openorg/Capability> rdfs:subClassOf <http://umbel.org/umbel/rc/Capability> .
+<http://purl.org/openorg/Equipment> umbel:isAbout <http://umbel.org/umbel/rc/PhysicalDevice> .
+<http://purl.org/openorg/Facility> rdfs:subClassOf <http://umbel.org/umbel/rc/Facility-Generic> .
+<http://purl.org/openorg/Service> rdfs:subClassOf <http://umbel.org/umbel/rc/ServiceEvent> .
+<http://xmlns.com/foaf/0.1/Image> rdfs:subClassOf <http://umbel.org/umbel/rc/VisualArtifact-CW> .
+<http://xmlns.com/foaf/0.1/Organization> rdfs:subClassOf <http://umbel.org/umbel/rc/Organization> .
+<http://xmlns.com/foaf/0.1/Person> rdfs:subClassOf <http://umbel.org/umbel/rc/Person> .

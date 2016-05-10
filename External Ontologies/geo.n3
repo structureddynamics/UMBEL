@@ -1,0 +1,4 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://umbel.org/umbel/rc/SpatialThing> owl:equivalentClass <http://www.w3.org/2003/01/geo/wgs84_pos#SpatialThing> .
+<http://umbel.org/umbel/rc/GeographicalPlace> owl:equivalentClass <http://www.w3.org/2003/01/geo/wgs84_pos#Point> .

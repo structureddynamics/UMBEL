@@ -1,0 +1,7 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://umbel.org/umbel/rc/Person> owl:equivalentClass <http://xmlns.com/foaf/0.1/Person> .
+<http://umbel.org/umbel/rc/Agent_Generic> owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> .
+<http://umbel.org/umbel/rc/MultiIndividualAgent_Intelligent> owl:equivalentClass <http://xmlns.com/foaf/0.1/Group> .
+<http://umbel.org/umbel/rc/Organization> owl:equivalentClass <http://xmlns.com/foaf/0.1/Organization> .
+<http://umbel.org/umbel/rc/InternetService> owl:equivalentClass <http://xmlns.com/foaf/0.1/OnlineAccount> .

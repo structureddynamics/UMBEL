@@ -1,0 +1,3 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://umbel.org/umbel/rc/ConceptualWork> owl:equivalentClass <http://purl.org/vocab/frbr/core#Work> .

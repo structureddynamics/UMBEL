@@ -1,0 +1,5 @@
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+
+<http://umbel.org/umbel/rc/MessageThread> owl:equivalentClass <http://rdfs.org/sioc/ns#Thread> .
+<http://umbel.org/umbel/rc/ComputerBulletinBoard> owl:equivalentClass <http://rdfs.org/sioc/ns#Forum> .
+<http://umbel.org/umbel/rc/UserAccountGroup> owl:equivalentClass <http://rdfs.org/sioc/ns#Usergroup> .
