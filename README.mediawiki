@@ -4,10 +4,10 @@ UMBEL is the Upper Mapping and Binding Exchange Layer, designed to help content 
 
 UMBEL provides two valuable functions:
 
-First, it is a broad, general reference structure of 35,500 concepts, which provides a scaffolding to link and interoperate other datasets and domain vocabularies, and Second, it is a base vocabulary for the construction of other concept-based domain ontologies, also designed for interoperation.
+First, it is a broad, general reference structure of 34,000 concepts, which provides a scaffolding to link and interoperate other datasets and domain vocabularies. Second, it is a base vocabulary for the construction of other concept-based domain ontologies, also designed for interoperation.
 
 == Documentation ==
 
-All the documentation related to UMBEL is available on [http://umbel.org UMBEL's main website].
+General documentation and search and display functions related to UMBEL are available on [http://umbel.org UMBEL's main website]. From that website, you can easily search and browse the ontology. The UMBEL portal is supported by a rich set of APIs and functionality written in Clojure.
 
-From that website, you can easily search and browse the ontology. The UMBEL portal is supported by a rich set of APIs and functionality written in Clojure.
+[http://techwiki.umbel.org/index.php/Category:Specification Specifications and technical annexes] for UMBEL, as well as many other technical papers, are available from http://techwiki.umbel.org.
